@@ -32,5 +32,5 @@ Aplikacija JobFinder je savršena aplikacija za sve ljude koji imaju previše po
 [Link na javni prototip](https://www.figma.com/proto/O3DPoogVyGRU1bMSpnQ7wA/JobFinder?node-id=1%3A4&scaling=scale-down)
 
 Planiranja zaduženja :
-Petar Markov : Backend i sve ostalo po potrebi
-Alen Halilović : Frontend i isto po potrebi 
+Petar Markov : Backend i sve ostalo po potrebi.
+Alen Halilović : Frontend i isto po potrebi. 
