@@ -41,6 +41,13 @@
 						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
 
+					<div class="d-flex justify-content-center link_1">
+					<a href="#">Don't Have an Account? Sign Up</a>
+					</div>
+					<div class="d-flex justify-content-center link_2">
+					<a href="#">Forgot your password?</a>
+					</div>
+
 					<div class="d-flex justify-content-center fb_link">
 					<a href="#">Login with facebook</a>
 					</div>
@@ -53,14 +60,16 @@
 
 				</form>
 			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center links">
-					<a href="#">Forgot your password?</a>
-				</div>
-			</div>
+			<div>
+        		<img src="../assets/facebook.svg" id="f_logo">
+    		</div>
+			<div>
+        		<img src="../assets/google.svg" id="g_logo">
+    		</div>
+			<div>
+        		<img src="../assets/apple.svg" id="a_logo">
+    		</div>
+			
 		</div>
 	</div>
 </div>
@@ -71,6 +80,23 @@
 <style>
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
+
+#f_logo{
+	height: 20px;
+	margin-top: -223px  ;
+	margin-right: 350px;
+}
+#g_logo{
+	height: 20px;
+	margin-top: -203px;
+	margin-right: 350px;
+}
+#a_logo{
+	height: 20px;
+	margin-top: -182px;
+	margin-right: 350px;
+	
+}
 
 html,body{
 background-image: url('https://c1.wallpaperflare.com/preview/875/216/967/table-coffee-pen-fruit.jpg');
@@ -116,6 +142,7 @@ margin-right: 5px;
 color: black;
 background-color: #FFC312;
 width: 100px;
+margin-top: 8px;
 }
 
 .login_btn:hover{
@@ -123,25 +150,34 @@ color: black;
 background-color: white;
 }
 
-.links{
-color: white;
+.link_1 a{
+	margin-top: 10px;
+	margin-right:33px;
+	color: #FFC312;
+}
+.link_2 a{
+	margin-right:202px;
+	margin-top: 10px;
+	color: rgb(174, 2, 2);
 }
 
-.links a{
-margin-left: 4px;
+.a_link a{
+	margin-left: -205px;
+	margin-top: 10px;
+	color: white !important;
 }
+
 .fb_link a{
-	margin-left: -120px;
-	margin-top: 5px;
+	margin-left: -180px;
+	margin-top: 30px;
+	color: white;
 }
 .g_link a{
-	margin-left: -236px;
-	margin-top: 5px;
+	margin-left: -196px;
+	margin-top: 10px;
+	color: white;
 }
-.a_link {
-	margin-left: -245px;
-	margin-top: 5px;
-}
+
 
 </style>
 
