@@ -129,9 +129,10 @@
 }
 
 html,body{
-background-image: url('https://c1.wallpaperflare.com/preview/875/216/967/table-coffee-pen-fruit.jpg');
-background-size: 1920px 1080px;
-background-repeat: no-repeat;
+	background-image: url('~@/assets/login-register.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	
 
 font-family: 'Numans', sans-serif;
 }

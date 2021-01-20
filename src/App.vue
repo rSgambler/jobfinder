@@ -2,25 +2,28 @@
   <div id="app">
     <div id="nav">
       <nav class="navbar navbar-expand-lg navbar-dark">
-  <a class="navbar-brand" href="#">  <img src="https://lh3.googleusercontent.com/QZZHErl58AWL6PFYoRKbz07SEZmN00HGgwetY4fTwpcPwd7730Uq-Ed9LUYoOAPAsJFrs6KFLyS-LQ83GmMdxka2me_CCVDzq9T6mKZ3EbVFsQMEqbTeY-CjIeFiWEnq3Cp-gVrN=w2400" width="30" height="30" class="d-inline-block align-top" alt=""></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="#">
+             <h1>JF</h1>
+  </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+    </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+      
+      <h4>Job Finder</h4>
+
       <li class="nav-item active">
         <router-link to="/home">Home  </router-link>
       </li>
-      <li class="nav-item">
-        <router-link to="/home">Hitni poslovi  </router-link>
-      </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <router-link to="/login">Login  </router-link>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <router-link to="/register">Register  </router-link>
       </li>
     </ul>
+    <img :src="require('@/assets/user.png')" >
   </div>
 </nav>
       
@@ -31,10 +34,27 @@
 
 <style lang="scss">
 
+img{
+  width: 40px;
+  margin-left: 1133px;
+  }
+
+h1 {
+  color:white;
+  font-family: fantasy;
+}
+
+
+h4 {
+  margin-top: 3px;
+  color:white;
+}
+
 
 .navbar{
   position: fixed;
   width:100%;
+  height: 7%;
   transition: background-color 1s;
   background-color: rgb(44, 44, 44, 0.5);
 }
@@ -47,14 +67,14 @@
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 
 #nav li {
-  padding: 20px;
+    margin-top: 3px;
+  margin-left: 100px;
+  padding: 5px;
 	display: inline;
 }
 
@@ -69,6 +89,7 @@
     }
   }
 }
+
 </style>
 <script>
 export default 
@@ -82,5 +103,6 @@ export default
     }
   });
 });
+
 
 </script>
