@@ -98,27 +98,26 @@
 	
 }
 
-html,body{
-background-image: url('~@/assets/login-register.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-
-font-family: 'Numans', sans-serif;
+body,html{
+	background-image: url('~@/assets/login-register.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Numans', sans-serif;
 }
 
 .container{
-height: 100%;
-align-content: center;
+	height: 100%;
+	align-content: center;
 }
 
 .card{
-height: 500px;
-margin-top: 15%;
-margin-bottom: auto;
-margin-right: 10%;
-margin-left: 50%;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
+	height: 500px;
+	margin-top: 15%;
+	margin-bottom: auto;
+	margin-right: 10%;
+	margin-left: 50%;
+	width: 400px;
+	background-color: rgba(0,0,0,0.5) !important;
 }
 
 
