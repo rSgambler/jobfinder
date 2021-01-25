@@ -5,24 +5,22 @@
   <div id="nav">
       <nav class="navbar navbar-expand-lg navbar-dark">
   <a class="navbar-brand" href="#">
-             <h1>JF</h1>
+      <h1>JF</h1>
   </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      
       <h5>Job Finder</h5>
-
       <li class="nav-item active">
-        <router-link to="/home">Home  </router-link>
+        <router-link :to="{ name: 'Home'}">Home</router-link>      
       </li>
       <li class="nav-item active">
-        <router-link to="/login">Login  </router-link>
+        <router-link :to="{ name: 'Login'}">Login</router-link>
       </li>
       <li class="nav-item active">
-        <router-link to="/register">Register  </router-link>
+        <router-link to="/Register">Register  </router-link>
       </li>
     </ul>
     
@@ -103,7 +101,9 @@ body{
 	margin-top:1200px;
 }
 
-
+#pagewrap{
+  color: white !important;
+}
 
 </style>
 
