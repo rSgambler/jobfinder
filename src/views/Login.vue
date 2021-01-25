@@ -98,12 +98,7 @@
 	
 }
 
-body,html{
-	background-image: url('~@/assets/login-register.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	font-family: 'Numans', sans-serif;
-}
+
 
 .container{
 	height: 100%;
