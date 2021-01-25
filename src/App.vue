@@ -3,30 +3,34 @@
   <div id="page-wrap"></div>
   <div id="header">
   <div id="nav">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">
-    </a>
-    <div id="logo">
-    <h1>JF</h1>
-    <h4>Job Finder</h4>
-    </div>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">
+             <h1>JF</h1>
+  </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
     </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      
+      <h5>Job Finder</h5>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav">
-            <a href="#" class="nav-item nav-link active">Home</a>
-            <a href="#" class="nav-item nav-link">Profile</a>
-            <a href="#" class="nav-item nav-link">Messages</a>
-            <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
-        </div>
-        <div class="navbar-nav ml-auto">
-            <a href="#" class="nav-item nav-link">Login</a>
-        </div>
-    </div>
-</nav>
+      <li class="nav-item active">
+        <router-link to="/home">Home  </router-link>
+      </li>
+      <li class="nav-item active">
+        <router-link to="/login">Login  </router-link>
+      </li>
+      <li class="nav-item active">
+        <router-link to="/register">Register  </router-link>
+      </li>
+    </ul>
+    
   </div>
+</nav>
+      
+    </div>
+    <img :src="require('@/assets/user.png')" >
   </div>
   <div id="container">
     <div class="post">
@@ -47,6 +51,16 @@
 
 <style>
 
+h1{
+  font-family: fantasy;
+  font-size:40pt;
+  margin-left:10px;
+}
+
+h5{
+  font-size: 22pt;
+  margin-top: 18px;
+}
 .navbar{
   position: fixed;
   width:100%;
@@ -59,31 +73,36 @@
 img{
   width: 50px;
   height: 50px;
+  margin-left: 2400px;
+  margin-top: 20px;
 }
+
 body{
   background-image: url('~@/assets/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  font-size: 18pt;
+  color:white;
 }
 
-#nav{
+
+#nav li {
   margin-top: 3px;
+  color: white;
   margin-left: 100px;
-  padding: 5px;
-	display: inline;
+  margin-top: 10px;
 }
 
-h1 
-{
-  margin-top: 20px;
-  color:white;
-  font-family: fantasy;
+
+#footer {
+  margin-left: 1100px;
+  display: table;
+  text-align: center;
+  color: white;
+	margin-bottom:0px;
+	margin-top:1200px;
 }
-h4 
-{margin-bottom: px;
-  margin-left: 30px;
-  color:white;
-}
+
 
 
 </style>
@@ -91,8 +110,3 @@ h4
 <script>
 
 </script>
-
-
-  <img url='~@/assets/background.jpg' id="b_image" alt>
-  <div style="height: 38px; width: 86px; z-index: 2147483647; cursor: pointer; top: 263px; left: 852px; position: fixed; display: none;"></div>
-  <div style="height: 38px; width: 86px; z-index: 2147483647; cursor: pointer; top: 263px; left: 852px; position: fixed; display: none;"></div>
