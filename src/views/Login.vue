@@ -1,178 +1,175 @@
 <template>
- 
+	<div id=login>
+	<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <h2 style="text-align:center">Login</h2>
 
-<div class="container">
-	<div class="d-flex justify-content-center h-100">
-		<div class="card">
-			<div class="card-header">
-				<h3>Sign In</h3>
-				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
-				</div>
-			</div>
-			<div class="card-body">
-				<form>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input type="text" class="form-control" placeholder="username">
-						
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input type="text" class="form-control" placeholder="e-mail">
-						
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" class="form-control" placeholder="password">
-					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
-					</div>
-					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
-					</div>
+      <div class="col">
+        <a href="#" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+        </a>
+        <a href="#" class="twitter btn">
+          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+        </a>
+        <a href="#" class="google btn">
+          <i class="fa fa-google fa-fw"></i> Login with Google+
+        </a>
+      </div>
 
-					<div class="d-flex justify-content-center link_1">
-					<a href="#">Don't Have an Account? Sign Up</a>
-					</div>
-					<div class="d-flex justify-content-center link_2">
-					<a href="#">Forgot your password?</a>
-					</div>
+      <div class="col">
 
-					<div class="d-flex justify-content-center fb_link">
-					<a href="#">Login with facebook</a>
-					</div>
-					<div class="d-flex justify-content-center g_link">
-					<a href="#">Login with google</a>
-					</div>
-					<div class="d-flex justify-content-center a_link">
-					<a href="#">Login with apple</a>
-					</div>
-
-				</form>
-			</div>
-			<div>
-        		<img src="../assets/facebook.svg" id="f_logo">
-    		</div>
-			<div>
-        		<img src="../assets/google.svg" id="g_logo">
-    		</div>
-			<div>
-        		<img src="../assets/apple.svg" id="a_logo">
-    		</div>
-			
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+		<div class="d-flex justify-content-center p_link">
+			<a href="#">Forgot your password?</a>
 		</div>
-	</div>
+		<div class="d-flex justify-content-center s_link">
+			<a href="#">Don't Have an Account?</a>
+		</div>
+
+      </div>
+
+    </div>
+  </form>
 </div>
 
+</div>
 
 </template>
 
 <style>
 
-@import url('https://fonts.googleapis.com/css?family=Numans');
-
-#f_logo{
-	height: 20px;
-	margin-top: -223px  ;
-	margin-right: 350px;
+.p_link a{
+	color:rgb(250, 64, 64) !important;
 }
-#g_logo{
-	height: 20px;
-	margin-top: -203px;
-	margin-right: 350px;
-}
-#a_logo{
-	height: 20px;
-	margin-top: -182px;
-	margin-right: 350px;
-	
+.s_link a{
+	color: #55ACEE !important;
 }
 
+* {box-sizing: border-box}
 
-
-.container{
-	height: 100%;
-	align-content: center;
+/* style the container */
+.container {
+  width: 40%;	
+  position: absolute;
+  margin-top: 9%;
+  margin-left: 29%;
+  border-radius: 10px;
+  background-color:rgb(44, 43, 43);opacity:0.95;
+  padding: 30px 0 30px 0;
 }
 
-.card{
-	height: 500px;
-	margin-top: 15%;
-	margin-bottom: auto;
-	margin-right: 10%;
-	margin-left: 50%;
-	width: 400px;
-	background-color: rgba(0,0,0,0.5) !important;
+/* style inputs and link buttons */
+input,
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 22px;
+  line-height: 25px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+/* style the submit button */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Two-column layout */
+.col {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 
-.card-header h3{
-color: white;
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
 }
 
-.remember{
-color: white;
+/* bottom container */
+.bottom-container {
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+  text-align: center;
+  background-color: #666;
+  border-radius: 0px 0px 4px 4px;
 }
 
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
-}
-
-.login_btn{
-color: black;
-background-color: #FFC312;
-width: 100px;
-margin-top: 8px;
-}
-
-.login_btn:hover{
-color: black;
-background-color: white;
-}
-
-.link_1 a{
-	margin-top: 10px;
-	margin-right:33px;
-	color: #FFC312;
-}
-.link_2 a{
-	margin-right:202px;
-	margin-top: 10px;
-	color: rgb(174, 2, 2);
-}
-
-.a_link a{
-	margin-left: -205px;
-	margin-top: 10px;
-	color: white !important;
-}
-
-.fb_link a{
-	margin-left: -180px;
-	margin-top: 30px;
-	color: white;
-}
-.g_link a{
-	margin-left: -196px;
-	margin-top: 10px;
-	color: white;
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
 }
 
 
 </style>
 
 
+	<div class="d-flex justify-content-center fb_link">
+					<a href="#">Login with facebook</a>
+					<img src="../assets/facebook.svg" id="f_logo">
+					</div>
+					<div class="d-flex justify-content-center g_link">
+					<a href="#">Login with google</a>
+					<img src="../assets/google.svg" id="g_logo">
+					</div>
+					<div class="d-flex justify-content-center a_link">
+					<a href="#">Login with apple</a>
+					<img src="../assets/apple.svg" id="a_logo">
+					</div>

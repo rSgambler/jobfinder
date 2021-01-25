@@ -20,13 +20,13 @@
         <router-link :to="{ name: 'Login'}">Login</router-link>
       </li>
       <li class="nav-item active">
-        <router-link to="/Register">Register  </router-link>
+        <router-link :to="{ name: 'Register'}">Register</router-link>
       </li>
     </ul>
     
   </div>
 </nav>
-      
+      <router-view/>
     </div>
     <img :src="require('@/assets/user.png')" >
   </div>
