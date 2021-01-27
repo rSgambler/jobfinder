@@ -29,7 +29,9 @@
 
 </template>
 
-<style>
+<style scoped>
+
+</style>>
 
 .s_link a{
 	color: #55ACEE !important;

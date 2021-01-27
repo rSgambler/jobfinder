@@ -39,7 +39,9 @@
 
 </template>
 
-<style>
+<style scoped>
+
+
 
 .p_link a{
 	color:rgb(250, 64, 64) !important;
