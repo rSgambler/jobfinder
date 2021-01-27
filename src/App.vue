@@ -14,13 +14,13 @@
     <ul class="navbar-nav">
       <h5>Job Finder</h5>
       <li class="nav-item active">
-        <router-link :to="{ name: 'Home'}">Home</router-link>      
+        <router-link :to="{ name: 'Home'}" class="nav-link">Home</router-link>      
       </li>
       <li class="nav-item active">
-        <router-link :to="{ name: 'Login'}">Login</router-link>
+        <router-link :to="{ name: 'Login'}" class="nav-link" >Login</router-link>
       </li>
       <li class="nav-item active">
-        <router-link :to="{ name: 'Register'}">Register</router-link>
+        <router-link :to="{ name: 'Register'}" class="nav-link">Register</router-link>
       </li>
     </ul>
     
@@ -28,7 +28,6 @@
 </nav>
       <router-view/>
     </div>
-    <img :src="require('@/assets/user.png')" >
   </div>
   <div id="container">
     <div class="post">
@@ -47,33 +46,32 @@
 
 </template>
 
-<style>
+<style scoped>
+
+.nav-link{
+  color: white;
+  font-weight: bold;
+
+}
 
 h1{
   font-family: fantasy;
   font-size:40pt;
-  margin-left:10px;
+  margin-left:40px;
+  color: #C8821A;
 }
 
 h5{
   font-size: 22pt;
   margin-top: 18px;
+  color: #C8821A;
+  font-weight: bold;
 }
 .navbar{
-  position: fixed;
-  width:100%;
-  height: 7%;
   transition: background-color 1s;
-  background-color: rgb(44, 44, 44, 0.5);
+  background-color: rgb(44, 44, 44, 0.7);
 }
 
-
-img{
-  width: 50px;
-  height: 50px;
-  margin-left: 2400px;
-  margin-top: 20px;
-}
 
 body{
   background-image: url('~@/assets/background.jpg');
@@ -86,14 +84,13 @@ body{
 
 #nav li {
   margin-top: 3px;
-  color: white;
   margin-left: 100px;
   margin-top: 10px;
 }
 
 
 #footer {
-  margin-left: 1100px;
+  margin-left: 800px;
   display: table;
   text-align: center;
   color: white;
@@ -101,9 +98,6 @@ body{
 	margin-top:1200px;
 }
 
-#pagewrap{
-  color: white !important;
-}
 
 </style>
 

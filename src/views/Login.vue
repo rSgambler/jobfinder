@@ -161,17 +161,3 @@ input[type=submit]:hover {
 
 
 </style>
-
-
-	<div class="d-flex justify-content-center fb_link">
-					<a href="#">Login with facebook</a>
-					<img src="../assets/facebook.svg" id="f_logo">
-					</div>
-					<div class="d-flex justify-content-center g_link">
-					<a href="#">Login with google</a>
-					<img src="../assets/google.svg" id="g_logo">
-					</div>
-					<div class="d-flex justify-content-center a_link">
-					<a href="#">Login with apple</a>
-					<img src="../assets/apple.svg" id="a_logo">
-					</div>
