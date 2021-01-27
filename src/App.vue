@@ -4,25 +4,42 @@
   <div id="header">
   <div id="nav">
       <nav class="navbar navbar-expand-lg navbar-dark">
-  <a class="navbar-brand" href="#">
-      <h1>JF</h1>
+  <a class="navbar-brand">
+      <h2>JF</h2>
   </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
   <div class="collapse navbar-collapse" id="navbarNav">
+          <h5>Job Finder</h5>
+
     <ul class="navbar-nav">
-      <h5>Job Finder</h5>
       <li class="nav-item active">
         <router-link :to="{ name: 'Home'}" class="nav-link">Home</router-link>      
       </li>
       <li class="nav-item active">
-        <router-link :to="{ name: 'Login'}" class="nav-link" >Login</router-link>
+        <router-link :to="{ name: ''}" class="nav-link">Hitni poslovi</router-link>      
+      </li>
+      <li class="nav-item active">
+        <router-link :to="{ name: ''}" class="nav-link">Kategorije poslova</router-link>      
+      </li>
+      <li class="nav-item active">
+        <router-link :to="{ name: ''}" class="nav-link">Poslodavci</router-link>      
+      </li>
+        
+       <li class="nav-item active">
+        <router-link :to="{ name: 'Login'}" class="nav-link px-5" >Login</router-link>
       </li>
       <li class="nav-item active">
         <router-link :to="{ name: 'Register'}" class="nav-link">Register</router-link>
       </li>
+      
     </ul>
+    
+  
+      <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      <button class="btn btn-warning" type="submit">Search</button>
+    
     
   </div>
 </nav>
@@ -46,15 +63,28 @@
 
 </template>
 
-<style scoped>
+<style>
+
+.navbar input[type=search]{
+  margin-left: 100px;
+  color: #C8821A;
+  width: 250px;
+  border-radius: 15px;
+}
+
+.navbar .btn{
+  width: 70px;
+  border-radius: 10px;
+  color: black;
+  margin-left: 10px;
+}
 
 .nav-link{
   color: white;
   font-weight: bold;
-
 }
 
-h1{
+h2{
   font-family: fantasy;
   font-size:40pt;
   margin-left:40px;
@@ -68,6 +98,7 @@ h5{
   font-weight: bold;
 }
 .navbar{
+  height: 65px;
   transition: background-color 1s;
   background-color: rgb(44, 44, 44, 0.7);
 }
@@ -77,15 +108,19 @@ body{
   background-image: url('~@/assets/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  font-size: 18pt;
+  font-size: 14pt;
   color:white;
 }
 
 
 #nav li {
   margin-top: 3px;
-  margin-left: 100px;
-  margin-top: 10px;
+  margin-left: 25px;
+  margin-top: 5px;
+}
+
+#nav ul {
+ margin-left: 15px;
 }
 
 
@@ -104,3 +139,6 @@ body{
 <script>
 
 </script>
+
+
+

@@ -1,9 +1,10 @@
 <template>
 	<div id=login>
+
 	<div class="container">
   <form action="/action_page.php">
     <div class="row">
-      <h2 style="text-align:center">Login</h2>
+      <h3 style="text-align:center">Login</h3>
 
       <div class="col">
         <a href="#" class="fb btn">
@@ -37,11 +38,16 @@
 
 </div>
 
+
 </template>
 
 <style scoped>
 
-
+html{
+  background-image: url('~@/assets/b_image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 .p_link a{
 	color:rgb(250, 64, 64) !important;

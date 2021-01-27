@@ -5,7 +5,7 @@
 	<div class="container">
   <form action="/action_page.php">
     <div class="row">
-      <h2 style="text-align:center">Register</h2>
+      <h3 style="text-align:center">Register</h3>
 
       <div class="col">
 
