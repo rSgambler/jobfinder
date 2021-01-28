@@ -1,6 +1,5 @@
 <template>
 <body class="home blog" style="cursor: default;">
-  <div id="page-wrap"></div>
   <div id="header">
   <div id="nav">
       <nav class="navbar navbar-expand-lg navbar-dark">
@@ -27,80 +26,82 @@
         <router-link :to="{ name: ''}" class="nav-link">Poslodavci</router-link>      
       </li>
         
-       <li class="nav-item active">
+       <li class="nav-item">
         <router-link :to="{ name: 'Login'}" class="nav-link px-5" >Login</router-link>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <router-link :to="{ name: 'Register'}" class="nav-link">Register</router-link>
       </li>
       
-    </ul>
-    
-  
       <input class="form-control mr-sm-2" type="search" placeholder="Search">
       <button class="btn btn-warning" type="submit">Search</button>
-    
+
+      <li class="nav-item active">
+        <router-link :to="{ name: 'User'}" class="nav-link px-5">USER:</router-link>
+      </li>
+    </ul>
     
   </div>
 </nav>
       <router-view/>
     </div>
   </div>
-  <div id="container">
-    <div class="post">
-  </div>
+
   <div id="footer">
-    <div class="clear"></div>
-    <div class="copyright">
       <h4>Copyright © 2021 JobFinder</h4>
-    </div>
   </div>
-  </div>  
-
-
-
 </body>
 
 </template>
 
-<style>
+<style scoped>
+
+
 
 .navbar input[type=search]{
-  margin-left: 100px;
+  margin-left: 150px;
   color: #C8821A;
   width: 250px;
   border-radius: 15px;
+  height: 50%;
+  margin-top: 6px;
 }
 
-.navbar .btn{
+ .navbar .btn{
   width: 70px;
+  height: 35px;
   border-radius: 10px;
   color: black;
   margin-left: 10px;
+  margin-top: 6px;
+  border-color: #C8821A;
+  background-color: #C8821A;
 }
 
 .nav-link{
+  font-weight:bold;
   color: white;
-  font-weight: bold;
+  text-shadow: 0px 0px;
 }
 
 h2{
   font-family: fantasy;
-  font-size:40pt;
+  font-size:35pt;
   margin-left:40px;
+  margin-top: 5px;
   color: #C8821A;
 }
 
 h5{
   font-size: 22pt;
-  margin-top: 18px;
+  margin-top: 16px;
   color: #C8821A;
   font-weight: bold;
 }
 .navbar{
-  height: 65px;
+  height: 60px;
   transition: background-color 1s;
-  background-color: rgb(44, 44, 44, 0.7);
+  background: rgba(0, 0, 0, 0.67);
 }
 
 

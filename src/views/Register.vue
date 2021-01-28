@@ -47,7 +47,7 @@
   margin-top: 9%;
   margin-left: 29%;
   border-radius: 10px;
-  background-color:rgb(44, 43, 43);opacity:0.95;
+  background: rgba(0, 0, 0, 0.85);
   padding: 30px 0 30px 0;
 }
 
@@ -118,16 +118,6 @@ input[type=submit]:hover {
 /* hide some text on medium and large screens */
 .hide-md-lg {
   display: none;
-}
-
-/* bottom container */
-.bottom-container {
-	width: 30%;
-	margin-left: auto;
-	margin-right: auto;
-  text-align: center;
-  background-color: #666;
-  border-radius: 0px 0px 4px 4px;
 }
 
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */

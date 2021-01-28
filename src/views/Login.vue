@@ -43,12 +43,6 @@
 
 <style scoped>
 
-html{
-  background-image: url('~@/assets/b_image.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .p_link a{
 	color:rgb(250, 64, 64) !important;
 }
@@ -65,7 +59,7 @@ html{
   margin-top: 9%;
   margin-left: 29%;
   border-radius: 10px;
-  background-color:rgb(44, 43, 43);opacity:0.95;
+  background: rgba(0, 0, 0, 0.85);
   padding: 30px 0 30px 0;
 }
 
