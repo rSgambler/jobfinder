@@ -9,6 +9,7 @@
   "dependencies": {
     "bootstrap": "^5.0.0-beta1",
     "core-js": "^3.6.5",
+    "firebase": "^8.2.5",
     "vue": "^2.6.11",
     "vue-a11y-dialog": "^0.5.2",
     "vue-router": "^3.2.0"
