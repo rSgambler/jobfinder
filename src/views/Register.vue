@@ -27,7 +27,12 @@
               placeholder="E-mail"
               required
             />
-            <input type="button" @click="register" value="Sign up" />
+            <input
+              class="btn"
+              type="button"
+              @click="register"
+              value="Sign up"
+            />
 
             <div class="d-flex justify-content-center s_link">
               <a href="#">Already have an account?</a>
@@ -66,6 +71,9 @@
   };
 </script>
 <style scoped>
+  .btn {
+    background-color: #45a049;
+  }
   .p_link a {
     color: rgb(250, 64, 64) !important;
   }
