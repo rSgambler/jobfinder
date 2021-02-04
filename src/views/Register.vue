@@ -51,7 +51,7 @@
     data() {
       return {
         username: "",
-        password: "",
+        pasword: "",
         email: "",
       };
     },
@@ -59,7 +59,7 @@
       register() {
         firebase
           .auth()
-          .createUserWithEmailAndPassword(this.email, this.password)
+          .createUserWithEmailAndPassword(this.email, this.pasword)
           .then(function() {
             console.log("Uspješna registracija");
           })
