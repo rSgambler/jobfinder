@@ -54,6 +54,7 @@
 
 /* style the container */
 .container {
+  color: white;
   width: 40%;	
   position: absolute;
   margin-top: 9%;

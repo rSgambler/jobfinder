@@ -25,8 +25,7 @@
       <li class="nav-item active">
         <router-link :to="{ name: ''}" class="nav-link">Poslodavci</router-link>      
       </li>
-        
-       <li class="nav-item">
+      <li class="nav-item">
         <router-link :to="{ name: 'Login'}" class="nav-link px-5" >Login</router-link>
       </li>
       <li class="nav-item">
@@ -50,11 +49,11 @@
   <div id="footer">
       <h4>Copyright © 2021 JobFinder</h4>
   </div>
+  
 </body>
-
 </template>
 
-<style scoped>
+<style>
 
 
 
@@ -80,7 +79,6 @@
 
 .nav-link{
   font-weight:bold;
-  color: white;
   text-shadow: 0px 0px;
 }
 
@@ -110,7 +108,6 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   font-size: 14pt;
-  color:white;
 }
 
 

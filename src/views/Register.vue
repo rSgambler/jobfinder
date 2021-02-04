@@ -1,6 +1,4 @@
 <template>
- 
-
 <div id=register>
 	<div class="container">
   <form action="/action_page.php">
@@ -49,6 +47,7 @@
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.85);
   padding: 30px 0 30px 0;
+  color: white;
 }
 
 /* style inputs and link buttons */
