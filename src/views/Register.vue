@@ -14,7 +14,7 @@
               required
             />
             <input
-              v-model="pasword"
+              v-model="password"
               type="password"
               name="password"
               placeholder="Password"
@@ -51,7 +51,7 @@
     data() {
       return {
         username: "",
-        pasword: "",
+        password: "",
         email: "",
       };
     },
@@ -59,14 +59,16 @@
       register() {
         firebase
           .auth()
-          .createUserWithEmailAndPassword(this.email, this.pasword)
+          .createUserWithEmailAndPassword(this.email, this.password)
           .then(function() {
             console.log("Uspješna registracija");
           })
           .catch(function(error) {
             alert(error);
           });
+           this.$router.push('/home');
       },
+      
     },
   };
 </script>
