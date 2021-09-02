@@ -51,9 +51,15 @@
   };
 </script>
 <style scoped>
+
+  h3 {
+  color:white;
+  }
+
   .p_link a {
     color: rgb(250, 64, 64) !important;
   }
+
   .s_link a {
     color: #55acee !important;
   }
