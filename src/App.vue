@@ -61,7 +61,7 @@
 
               <li class="nav-item active">
                 <router-link :to="{ name: 'User' }" class="nav-link px-5"
-                  >USER:</router-link
+                  >USER</router-link
                 >
               </li>
             </ul>
@@ -78,6 +78,10 @@
 </template>
 
 <style>
+
+a {
+  color:red;
+}
   .navbar input[type="search"] {
     margin-left: 150px;
     color: #c8821a;
