@@ -19,18 +19,20 @@
 
           <div class="col">
             <input
+              v-model = "email"
               type="text"
               name="username"
               placeholder="Username"
               required
             />
             <input
+              v-model = "password"
               type="password"
               name="password"
               placeholder="Password"
               required
             />
-            <input type="submit" value="Login" />
+            <input type="button" @click = "login" value="Login" />
             <div class="d-flex justify-content-center p_link">
               <a href="#">Forgot your password?</a>
             </div>
@@ -49,11 +51,14 @@
     name: "Login",
     data() {
       return {
+        username : "",
         email: "",
+        password : "",
       };
     },
     methods: {
   login() {
+    console.log(this.username)
     firebase
       .auth()
       .signInWithEmailAndPassword(this.email, this.password)
