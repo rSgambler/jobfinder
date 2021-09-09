@@ -34,3 +34,22 @@ const router = new VueRouter({
 });
 
 export default router;
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.authRequired)) {
+    console.log("1.if")
+    if (firebase.auth().currentUser) {
+      console.log("2.if")
+      next();
+    } else {
+      console.log("2.else")
+      alert('You must be logged in to see this page');
+      next({
+        path: '/',
+      });
+    }
+  } else {
+    console.log("1.else")
+    next();
+  }
+});
