@@ -42,6 +42,9 @@
                 >
               </li>
               <li class="nav-item">
+                <a href = "#" @click = "logout()" class="nav-link px-5">Logout</a
+                >
+                <li class="nav-item">
                 <router-link :to="{ name: 'Login' }" class="nav-link px-5"
                   >Login</router-link
                 >
@@ -154,4 +157,34 @@ a {
   }
 </style>
 
-<script></script>
+<script>
+import { firebase } from "@/firebase";
+import store from "@/store";
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user){
+        console.log(user.email)
+        store.currentUser = user.email;
+    }else{
+        console.log("No user");
+        store.currentUser = null;
+        }
+
+})
+
+export default{
+  name: "app",
+  data () {
+    return{
+      store,
+    }
+  },
+  methods : {
+    logout(){
+      firebase.auth().signOut().then(() =>{
+        this.$router.push({name : 'Login'})
+      });
+    }
+  }
+}
+</script>

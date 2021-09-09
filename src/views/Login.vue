@@ -21,8 +21,8 @@
             <input
               v-model = "email"
               type="text"
-              name="username"
-              placeholder="Username"
+              name="email"
+              placeholder="Email"
               required
             />
             <input
@@ -62,9 +62,10 @@
     firebase
       .auth()
       .signInWithEmailAndPassword(this.email, this.password)
-      .then(() => {
+      .then((result) => {
         alert('Successfully logged in');
-        this.$router.push('/dashboard');
+        console.log(result)
+        this.$router.replace({name:"Home"});
       })
       .catch(error => {
         alert(error.message);
