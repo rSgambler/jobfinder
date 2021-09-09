@@ -41,18 +41,19 @@
                   >Poslodavci</router-link
                 >
               </li>
-              <li class="nav-item">
-                <a href = "#" @click = "logout()" class="nav-link px-5">Logout</a
-                >
-                <li class="nav-item">
+              
+                <li v-if="!store.currentUser" class="nav-item">
                 <router-link :to="{ name: 'Login' }" class="nav-link px-5"
                   >Login</router-link
                 >
               </li>
-              <li class="nav-item">
+              <li v-if="!store.currentUser" class="nav-item">
                 <router-link :to="{ name: 'Register' }" class="nav-link"
                   >Register</router-link
                 >
+              </li>
+              <li v-if="store.currentUser" class="nav-item">
+                <a href = "#" @click.prevent = "logout()" class="nav-link px-5">Logout</a>
               </li>
 
               <input
@@ -160,6 +161,9 @@ a {
 <script>
 import { firebase } from "@/firebase";
 import store from "@/store";
+import router from "@/router"
+
+console.log(router)
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user){
@@ -168,6 +172,9 @@ firebase.auth().onAuthStateChanged((user) => {
     }else{
         console.log("No user");
         store.currentUser = null;
+        if (router.name !== "Login"){
+          router.push("Login")
+        }
         }
 
 })
