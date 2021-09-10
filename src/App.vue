@@ -3,9 +3,7 @@
     <div id="header">
       <div id="nav">
         <nav class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand">
-            <h2>JF</h2>
-          </a>
+          <a class="navbar-brand"><h2>JF</h2></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -13,44 +11,31 @@
             data-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
+            aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <h5>Job Finder</h5>
 
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <router-link :to="{ name: 'Home' }" class="nav-link"
-                  >Home</router-link
-                >
+                <router-link :to="{ name: 'Home' }" class="nav-link">Home</router-link>
               </li>
               <li class="nav-item active">
-                <router-link :to="{ name: '' }" class="nav-link"
-                  >Hitni poslovi</router-link
-                >
+                <router-link :to="{ name: '' }" class="nav-link">Hitni poslovi</router-link>
               </li>
               <li class="nav-item active">
-                <router-link :to="{ name: '' }" class="nav-link"
-                  >Kategorije poslova</router-link
-                >
+                <router-link :to="{ name: '' }" class="nav-link">Kategorije poslova</router-link>
               </li>
               <li class="nav-item active">
-                <router-link :to="{ name: '' }" class="nav-link"
-                  >Poslodavci</router-link
-                >
+                <router-link :to="{ name: '' }" class="nav-link">Poslodavci</router-link>
               </li>
               
-                <li v-if="!store.currentUser" class="nav-item">
-                <router-link :to="{ name: 'Login' }" class="nav-link px-5"
-                  >Login</router-link
-                >
+              <li v-if="!store.currentUser" class="nav-item">
+                <router-link :to="{ name: 'Login' }" class="nav-link px-5">Login</router-link>
               </li>
               <li v-if="!store.currentUser" class="nav-item">
-                <router-link :to="{ name: 'Register' }" class="nav-link"
-                  >Register</router-link
-                >
+                <router-link :to="{ name: 'Register' }" class="nav-link">Register</router-link>
               </li>
               <li v-if="store.currentUser" class="nav-item">
                 <a href = "#" @click.prevent = "logout()" class="nav-link px-5">Logout</a>
@@ -64,9 +49,7 @@
               <button class="btn btn-warning" type="submit">Search</button>
 
               <li class="nav-item active">
-                <router-link :to="{ name: 'User' }" class="nav-link px-5"
-                  >USER</router-link
-                >
+                <router-link :to="{ name: 'User' }" class="nav-link px-5">USER</router-link>
               </li>
             </ul>
           </div>
