@@ -1,144 +1,157 @@
 <template>
-  <body class="home blog" style="cursor: default;">
-    <div id="header">
-      <div id="nav">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand"><h2>JF</h2></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <h5>Job Finder</h5>
+<div id="header">
+  <div id="app" class="position-relative">
+    <div id="nav" class="jf-navbar">
+		<b-navbar class="justify-content-between" togglable="lg" type="dark">
+			<b-navbar-brand href="#">
+				<h1>JF</h1>
+			</b-navbar-brand>
 
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <router-link :to="{ name: 'Home' }" class="nav-link">Home</router-link>
-              </li>
-              <li class="nav-item active">
-                <router-link :to="{ name: '' }" class="nav-link">Hitni poslovi</router-link>
-              </li>
-              <li class="nav-item active">
-                <router-link :to="{ name: '' }" class="nav-link">Kategorije poslova</router-link>
-              </li>
-              <li class="nav-item active">
-                <router-link :to="{ name: '' }" class="nav-link">Poslodavci</router-link>
-              </li>
-              
-              <li v-if="!store.currentUser" class="nav-item">
-                <router-link :to="{ name: 'Login' }" class="nav-link px-5">Login</router-link>
-              </li>
-              <li v-if="!store.currentUser" class="nav-item">
-                <router-link :to="{ name: 'Register' }" class="nav-link">Register</router-link>
-              </li>
-              <li v-if="store.currentUser" class="nav-item">
-                <a href = "#" @click.prevent = "logout()" class="nav-link px-5">Logout</a>
-              </li>
+			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-              <input
+			<b-collapse id="nav-collapse" class="justify-content-between" is-nav>
+				<b-navbar-nav class="align-items-baseline">
+					<b-nav-item>
+						<h4>Job Finder</h4>
+					</b-nav-item>
+					<b-nav-item to="/Home">Home</b-nav-item>
+          <b-nav-item to="/">Hitni poslovi</b-nav-item>
+          <b-nav-item to="/">Kategorije poslova</b-nav-item>
+          <b-nav-item to="/">Poslodavci</b-nav-item>
+					<b-nav-item v-if="!store.currentUser" to="/Login">Login</b-nav-item>
+					<b-nav-item v-if="!store.currentUser" to="/Register">Register</b-nav-item>
+          <b-nav-item v-if="store.currentUser">
+            <a href = "#" @click.prevent = "logout()">Logout</a>
+          </b-nav-item>
+          
+        <b-nav-item>
+          <input
                 class="form-control mr-sm-2"
                 type="search"
                 placeholder="Search"
               />
-              <button class="btn btn-warning" type="submit">Search</button>
+        </b-nav-item>
+        <b-nav-item>
+          <button class="btn btn-warning" type="submit">Search</button>
+				</b-nav-item>
+        </b-navbar-nav>
 
-              <li class="nav-item active">
-                <router-link :to="{ name: 'User' }" class="nav-link px-5">USER</router-link>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <router-view />
-      </div>
+				<!-- Right aligned nav items -->
+				<b-navbar-nav class="ml-auto" right>
+				</b-navbar-nav>
+			</b-collapse>
+		</b-navbar>
     </div>
+    <router-view/>
+    
+  </div>
+</div>
 
-    <div id="footer">
-      <h4>Copyright © 2021 JobFinder</h4>
-    </div>
-  </body>
 </template>
 
-<style>
+<style lang="scss">
+	@media (max-width: 992px) {
+		nav.navbar-expand .navbar-toggler {
+			display: block!important;
+		}
+		nav.navbar-expand .navbar-collapse {
+			display: none!important;
+		}
+	}
+	@media (min-width: 992px) {
+		nav.navbar-expand .navbar-toggler {
+			display: none!important;
+		}
+		nav.navbar-expand .nav-collapse {
+			display: flex!important;
+		}
+	}
 
-a {
-  color:red;
+	#nav-collapse.navbar-collapse.show {
+		display: flex!important;
+		flex-direction: column;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: rgb(44, 44, 44, 0.5);
+		z-index: 1000;
+	}
+	#nav-collapse.navbar-collapse.show ul.navbar-nav {
+		width: 100%;
+		flex-direction: column;
+		text-align: left;
+		padding-left: 55px;
+		padding-bottom: 20px;
+	}
+	#nav-collapse.navbar-collapse.show ul.navbar-nav:first-child {
+		padding-top: 90px;
+	}
+
+	/* margin-left ti ne treba, jer ti to onemogucuje responzivnost. Margin i padding pravila koja imaju
+		tocno odredeni px nisu bas dobre za koristiti
+	 */
+img{
+  width: 40px;
+  //margin-left: 1133px;
+  }
+
+h1 {
+  color:white;
+  font-family: fantasy;
 }
-  .navbar input[type="search"] {
-    margin-left: 150px;
-    color: #c8821a;
-    width: 250px;
-    border-radius: 15px;
-    height: 50%;
-    margin-top: 6px;
-  }
 
-  .navbar .btn {
-    width: 70px;
-    height: 35px;
-    border-radius: 10px;
-    color: black;
-    margin-left: 10px;
-    margin-top: 6px;
-    border-color: #c8821a;
-    background-color: #c8821a;
-  }
 
-  .nav-link {
+h4 {
+  margin-top: 3px;
+  color:white;
+}
+
+// height ti ne treba, jer ti slike koje imas i tekst vec oznacavaju velicino navigacije
+.jf-navbar{
+  position: fixed;
+  width:100%;
+  //height: 7%;
+  transition: background-color 1s;
+  background-color: rgb(44, 44, 44, 0.5);
+	z-index: 10000;
+}
+.navbar {
+	padding: 0 55px;
+	z-index: 10000;
+}
+.navbar-brand, .navbar-toggler {
+	position: relative;
+	z-index: 1001;
+}
+ul.navbar-nav li.nav-item a.nav-link h4, .navbar-brand h1{
+	margin-bottom: 0;
+}
+
+.rect{
+  width:1000%;
+  height:100vh;
+}
+
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  a {
     font-weight: bold;
-    text-shadow: 0px 0px;
-  }
+    color: #ffffff;
+    text-decoration: none;
 
-  h2 {
-    font-family: fantasy;
-    font-size: 35pt;
-    margin-left: 40px;
-    margin-top: 5px;
-    color: #c8821a;
+    &.router-link-exact-active {
+      color:#FFC312;
+    }
   }
+}
 
-  h5 {
-    font-size: 22pt;
-    margin-top: 16px;
-    color: #c8821a;
-    font-weight: bold;
-  }
-  .navbar {
-    height: 60px;
-    transition: background-color 1s;
-    background: rgba(0, 0, 0, 0.67);
-  }
-
-  body {
-    background-image: url("~@/assets/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-size: 14pt;
-  }
-
-  #nav li {
-    margin-top: 3px;
-    margin-left: 25px;
-    margin-top: 5px;
-  }
-
-  #nav ul {
-    margin-left: 15px;
-  }
-
-  #footer {
-    margin-left: 800px;
-    display: table;
-    text-align: center;
-    color: white;
-    margin-bottom: 0px;
-    margin-top: 1200px;
-  }
 </style>
 
 <script>
