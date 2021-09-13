@@ -95,30 +95,21 @@
 		padding-top: 90px;
 	}
 
-	/* margin-left ti ne treba, jer ti to onemogucuje responzivnost. Margin i padding pravila koja imaju
-		tocno odredeni px nisu bas dobre za koristiti
-	 */
-img{
-  width: 40px;
-  //margin-left: 1133px;
-  }
 
 h1 {
-  color:white;
+  color:#FFC312;
   font-family: fantasy;
 }
 
 
 h4 {
   margin-top: 3px;
-  color:white;
+  color:#FFC312;
 }
 
-// height ti ne treba, jer ti slike koje imas i tekst vec oznacavaju velicino navigacije
 .jf-navbar{
   position: fixed;
   width:100%;
-  //height: 7%;
   transition: background-color 1s;
   background-color: rgb(44, 44, 44, 0.5);
 	z-index: 10000;
