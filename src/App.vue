@@ -1,5 +1,4 @@
 <template>
-<div :style="{'background-image': 'url(' + require('./assets/background.jpg') + ')'}">
 <div id="header">
   <div id="app" class="position-relative">
     <div id="nav" class="jf-navbar">
@@ -24,7 +23,7 @@
           <b-nav-item v-if="store.currentUser">
             <a href = "#" @click.prevent = "logout()">Logout</a>
           </b-nav-item>
-          
+          <b-nav-item v-if="store.currentUser" to="/User">Profil</b-nav-item>
         
         </b-navbar-nav>
 
@@ -47,7 +46,6 @@
     <router-view/>
     
   </div>
-</div>
 </div>
 
 </template>
@@ -115,7 +113,7 @@ h4 {
 	z-index: 10000;
 }
 .navbar {
-	padding: 0 55px;
+	padding:  55px;
 	z-index: 10000;
 }
 .navbar-brand, .navbar-toggler {
@@ -147,6 +145,9 @@ ul.navbar-nav li.nav-item a.nav-link h4, .navbar-brand h1{
     &.router-link-exact-active {
       color:#FFC312;
     }
+  }
+  .nav-item{
+    margin-left: 15px;
   }
 }
 
