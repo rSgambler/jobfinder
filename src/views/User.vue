@@ -1,7 +1,7 @@
 <template>
   <div id="user">
     <div class="container">
-      <a>OVO JE PROFIL! OVO JE PROFIL! OVO JE PROFIL!FFFFFFFFFFFFFFF</a>
+      <a>OVO JE PROFIL! OVO JE PROFIL! OVO JE PROFIL!</a>
     </div>
   </div>
 </template>
@@ -23,3 +23,12 @@
     padding: 500px 90px;
   }
 </style>
+
+<script>
+import { db } from '@/firebase';
+
+export default {
+  name:"user"
+}
+</script>
+

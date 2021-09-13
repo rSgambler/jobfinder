@@ -1,5 +1,5 @@
 <template>
-<div id="header">
+<div id="header" class="postion-relative vh-100">
   <div id="app" class="position-relative">
     <div id="nav" class="jf-navbar">
 		<b-navbar class="justify-content-between" togglable="lg" type="dark">
@@ -46,15 +46,14 @@
     <router-view/>
     
   </div>
+  <Footer>
+    </Footer>
 </div>
 
 </template>
 
 <style lang="scss">
 
-#header{
-  background-image: url('~@/assets/background.jpg');;
-}
 	@media (max-width: 992px) {
 		nav.navbar-expand .navbar-toggler {
 			display: block!important;
@@ -154,6 +153,7 @@ ul.navbar-nav li.nav-item a.nav-link h4, .navbar-brand h1{
 </style>
 
 <script>
+import Footer from '@/components/Footer.vue';
 import { firebase } from "@/firebase";
 import store from "@/store";
 import router from "@/router"
@@ -187,6 +187,11 @@ export default{
         this.$router.push({name : 'Login'})
       });
     }
+  },
+  components:{
+    Footer
   }
 }
+
+
 </script>

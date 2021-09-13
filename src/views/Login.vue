@@ -68,7 +68,7 @@
       .auth()
       .signInWithEmailAndPassword(this.email, this.password)
       .then((result) => {
-        alert('Successfully logged in');
+        alert('Uspješna prijava!');
         console.log(result)
         this.$router.replace({name:"Home"});
       })
