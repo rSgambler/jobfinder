@@ -1,4 +1,5 @@
 <template>
+<div :style="{'background-image': 'url(' + require('./assets/background.jpg') + ')'}">
 <div id="header">
   <div id="app" class="position-relative">
     <div id="nav" class="jf-navbar">
@@ -24,7 +25,12 @@
             <a href = "#" @click.prevent = "logout()">Logout</a>
           </b-nav-item>
           
-        <b-nav-item>
+        
+        </b-navbar-nav>
+
+				<!-- Right aligned nav items -->
+				<b-navbar-nav class="ml-auto" right>
+          <b-nav-item>
           <input
                 class="form-control mr-sm-2"
                 type="search"
@@ -34,10 +40,6 @@
         <b-nav-item>
           <button class="btn btn-warning" type="submit">Search</button>
 				</b-nav-item>
-        </b-navbar-nav>
-
-				<!-- Right aligned nav items -->
-				<b-navbar-nav class="ml-auto" right>
 				</b-navbar-nav>
 			</b-collapse>
 		</b-navbar>
@@ -46,10 +48,15 @@
     
   </div>
 </div>
+</div>
 
 </template>
 
 <style lang="scss">
+
+#header{
+  background-image: url('~@/assets/background.jpg');;
+}
 	@media (max-width: 992px) {
 		nav.navbar-expand .navbar-toggler {
 			display: block!important;
