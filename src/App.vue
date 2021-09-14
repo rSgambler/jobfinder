@@ -20,11 +20,11 @@
               <b-nav-item to="/Poslodavci">Poslodavci</b-nav-item>
               <b-nav-item v-if="!store.currentUser" to="/Login">Login</b-nav-item>
               <b-nav-item v-if="!store.currentUser" to="/Register">Register</b-nav-item>
+              <b-nav-item v-if="store.currentUser" to="/User">Profil</b-nav-item>
               <b-nav-item v-if="store.currentUser">
                 <a href="#" @click.prevent="logout()">Logout</a>
               </b-nav-item>
-              <b-nav-item v-if="store.currentUser" to="/User">Profil</b-nav-item>
-            </b-navbar-nav>
+              </b-navbar-nav>
 
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto" right>
