@@ -38,11 +38,18 @@
                 <input
                   class="form-control mr-sm-2"
                   type="search"
-                  placeholder="Search"
+                  placeholder="Pretraži Poslove"
                 />
               </b-nav-item>
               <b-nav-item>
-                <button class="btn btn-warning" type="submit">Search</button>
+                <button class="btn btn-warning" type="submit">
+                  Search
+                </button>
+              </b-nav-item>
+              <b-nav-item v-if="store.currentUser" to="/PredajOglas">
+                <button class="btn btn-warning" type="button">
+                  Predaj Oglas
+                </button>
               </b-nav-item>
             </b-navbar-nav>
           </b-collapse>
@@ -164,13 +171,13 @@
       console.log(user.email);
       store.currentUser = user.email;
       if (!currentRoute.meta.needsUser) {
-        router.push("Home");
+        router.push({ name: "home" });
       }
     } else {
       console.log("No user");
       store.currentUser = null;
       if (currentRoute.meta.needsUser) {
-        router.push("Login");
+        router.push({ name: "login" });
       }
     }
   });
@@ -188,7 +195,7 @@
           .auth()
           .signOut()
           .then(() => {
-            this.$router.push({ name: "Login" });
+            this.$router.push({ name: "login" });
           });
       },
     },

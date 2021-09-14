@@ -8,46 +8,54 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Home,
     meta: {
       needsUser: false,
     },
   },
   {
-    path: "/Login",
-    name: "Login",
+    path: "/login",
+    name: "login",
     component: () => import("../views/Login.vue"),
   },
   {
-    path: "/Register",
-    name: "Register",
+    path: "/register",
+    name: "register",
     component: () => import("../views/Register.vue"),
   },
   {
-    path: "/User",
-    name: "User",
+    path: "/user",
+    name: "user",
     component: () => import("../views/User.vue"),
     meta: {
       needsUser: true,
     },
   },
   {
-    path: "/HitniPoslovi",
-    name: "HitniPoslovi",
+    path: "/hitniPoslovi",
+    name: "hitniPoslovi",
     component: () => import("../views/User.vue"),
   },
   {
-    path: "/Kategorije",
-    name: "Kategorije",
+    path: "/kategorije",
+    name: "kategorije",
     component: () => import("../views/User.vue"),
     meta: {
       needsUser: true,
     },
   },
   {
-    path: "/Poslodavci",
-    name: "Poslodavci",
+    path: "/poslodavci",
+    name: "poslodavci",
+    component: () => import("../views/User.vue"),
+    meta: {
+      needsUser: true,
+    },
+  },
+  {
+    path: "/predajOglas",
+    name: "predajOglas",
     component: () => import("../views/User.vue"),
     meta: {
       needsUser: true,
