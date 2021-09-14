@@ -18,18 +18,12 @@
               <b-nav-item to="/HitniPoslovi">Hitni poslovi</b-nav-item>
               <b-nav-item to="/Kategorije">Kategorije poslova</b-nav-item>
               <b-nav-item to="/Poslodavci">Poslodavci</b-nav-item>
-              <b-nav-item v-if="!store.currentUser" to="/Login"
-                >Login</b-nav-item
-              >
-              <b-nav-item v-if="!store.currentUser" to="/Register"
-                >Register</b-nav-item
-              >
+              <b-nav-item v-if="!store.currentUser" to="/Login">Login</b-nav-item>
+              <b-nav-item v-if="!store.currentUser" to="/Register">Register</b-nav-item>
               <b-nav-item v-if="store.currentUser">
                 <a href="#" @click.prevent="logout()">Logout</a>
               </b-nav-item>
-              <b-nav-item v-if="store.currentUser" to="/User"
-                >Profil</b-nav-item
-              >
+              <b-nav-item v-if="store.currentUser" to="/User">Profil</b-nav-item>
             </b-navbar-nav>
 
             <!-- Right aligned nav items -->

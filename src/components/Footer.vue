@@ -1,6 +1,6 @@
 <template>
 <div class="footer">
-    <h5>Copyright</h5>
+    <h6>© 2021 Copyright Job Finder</h6>
 </div>
 </template>
 <style scoped>
