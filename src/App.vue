@@ -1,5 +1,5 @@
 <template>
-<div id="header">
+<div id="header" class="postion-relative vh-100">
   <div id="app" class="position-relative">
     <div id="nav" class="jf-navbar">
 		<b-navbar class="justify-content-between" togglable="lg" type="dark">
@@ -23,8 +23,13 @@
           <b-nav-item v-if="store.currentUser">
             <a href = "#" @click.prevent = "logout()">Logout</a>
           </b-nav-item>
-          
-        <b-nav-item>
+          <b-nav-item v-if="store.currentUser" to="/User">Profil</b-nav-item>
+        
+        </b-navbar-nav>
+
+				<!-- Right aligned nav items -->
+				<b-navbar-nav class="ml-auto" right>
+          <b-nav-item>
           <input
                 class="form-control mr-sm-2"
                 type="search"
@@ -34,10 +39,6 @@
         <b-nav-item>
           <button class="btn btn-warning" type="submit">Search</button>
 				</b-nav-item>
-        </b-navbar-nav>
-
-				<!-- Right aligned nav items -->
-				<b-navbar-nav class="ml-auto" right>
 				</b-navbar-nav>
 			</b-collapse>
 		</b-navbar>
@@ -45,11 +46,14 @@
     <router-view/>
     
   </div>
+  <Footer>
+    </Footer>
 </div>
 
 </template>
 
 <style lang="scss">
+
 	@media (max-width: 992px) {
 		nav.navbar-expand .navbar-toggler {
 			display: block!important;
@@ -88,36 +92,27 @@
 		padding-top: 90px;
 	}
 
-	/* margin-left ti ne treba, jer ti to onemogucuje responzivnost. Margin i padding pravila koja imaju
-		tocno odredeni px nisu bas dobre za koristiti
-	 */
-img{
-  width: 40px;
-  //margin-left: 1133px;
-  }
 
 h1 {
-  color:white;
+  color:#FFC312;
   font-family: fantasy;
 }
 
 
 h4 {
   margin-top: 3px;
-  color:white;
+  color:#FFC312;
 }
 
-// height ti ne treba, jer ti slike koje imas i tekst vec oznacavaju velicino navigacije
 .jf-navbar{
   position: fixed;
   width:100%;
-  //height: 7%;
   transition: background-color 1s;
   background-color: rgb(44, 44, 44, 0.5);
 	z-index: 10000;
 }
 .navbar {
-	padding: 0 55px;
+	padding:  55px;
 	z-index: 10000;
 }
 .navbar-brand, .navbar-toggler {
@@ -150,11 +145,15 @@ ul.navbar-nav li.nav-item a.nav-link h4, .navbar-brand h1{
       color:#FFC312;
     }
   }
+  .nav-item{
+    margin-left: 15px;
+  }
 }
 
 </style>
 
 <script>
+import Footer from '@/components/Footer.vue';
 import { firebase } from "@/firebase";
 import store from "@/store";
 import router from "@/router"
@@ -188,6 +187,11 @@ export default{
         this.$router.push({name : 'Login'})
       });
     }
+  },
+  components:{
+    Footer
   }
 }
+
+
 </script>

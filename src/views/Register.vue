@@ -87,19 +87,20 @@
     box-sizing: border-box;
   }
 
-  /* style the container */
+ 
   .container {
     width: 40%;
     position: absolute;
-    margin-top: 9%;
-    margin-left: 29%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 45%);
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.85);
     padding: 30px 0 30px 0;
     color: white;
   }
 
-  /* style inputs and link buttons */
+ 
   input,
   .btn {
     width: 100%;
@@ -111,7 +112,7 @@
     display: inline-block;
     font-size: 22px;
     line-height: 25px;
-    text-decoration: none; /* remove underline from anchors */
+    text-decoration: none; 
   }
 
   input:hover,
