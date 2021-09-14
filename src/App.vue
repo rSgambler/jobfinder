@@ -37,7 +37,7 @@
               </b-nav-item>
               <b-nav-item>
                 <button class="btn btn-warning" type="submit">
-                  Search
+                  Pretraži
                 </button>
               </b-nav-item>
               <b-nav-item v-if="store.currentUser" to="/PredajOglas">
