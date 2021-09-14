@@ -19,25 +19,20 @@
 
           <div class="col">
             <input
-              v-model = "email"
+              v-model="email"
               type="text"
               name="email"
               placeholder="Email"
               required
             />
             <input
-              v-model = "password"
+              v-model="password"
               type="password"
               name="password"
               placeholder="Password"
               required
             />
-            <input
-              class="btn"
-              type="button"
-              @click="login"
-              value="Login"
-            />
+            <input class="btn" type="button" @click="login" value="Login" />
             <div class="d-flex justify-content-center p_link">
               <a href="#">Forgot your password?</a>
             </div>
@@ -56,33 +51,30 @@
     name: "Login",
     data() {
       return {
-        username : "",
+        username: "",
         email: "",
-        password : "",
+        password: "",
       };
     },
     methods: {
-  login() {
-    console.log(this.username)
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(this.email, this.password)
-      .then((result) => {
-        alert('Uspješna prijava!');
-        console.log(result)
-        this.$router.replace({name:"Home"});
-      })
-      .catch(error => {
-        alert(error.message);
-      });
-  },
-},
+      login() {
+        console.log(this.username);
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, this.password)
+          .then((result) => {
+            alert("Uspješna prijava!");
+          })
+          .catch((error) => {
+            alert(error.message);
+          });
+      },
+    },
   };
 </script>
 <style scoped>
-
   h3 {
-  color:white;
+    color: white;
   }
 
   .p_link a {
@@ -97,7 +89,6 @@
     box-sizing: border-box;
   }
 
- 
   .container {
     top: 50%;
     left: 50%;
@@ -109,7 +100,6 @@
     padding: 30px 0 30px 0;
   }
 
- 
   input,
   .btn {
     width: 100%;
@@ -121,7 +111,7 @@
     display: inline-block;
     font-size: 22px;
     line-height: 25px;
-    text-decoration: none; 
+    text-decoration: none;
   }
 
   input:hover,
@@ -129,11 +119,10 @@
     opacity: 1;
   }
 
-  .btn{
+  .btn {
     background-color: #45a049;
   }
 
-  
   .fb {
     background-color: #3b5998;
     color: white;
