@@ -4,27 +4,35 @@
       <div id="nav" class="jf-navbar">
         <b-navbar class="justify-content-between" togglable="lg" type="dark">
           <b-navbar-brand href="#">
-            <h1>JF</h1>
+            <b-nav-item to="/home">
+              <h1>JF</h1>
+            </b-nav-item>
           </b-navbar-brand>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
           <b-collapse id="nav-collapse" class="justify-content-between" is-nav>
             <b-navbar-nav class="align-items-baseline">
-              <b-nav-item>
+              <b-nav-item to="/home">
                 <h4>Job Finder</h4>
               </b-nav-item>
-              <b-nav-item to="/Home">Home</b-nav-item>
-              <b-nav-item to="/HitniPoslovi">Hitni poslovi</b-nav-item>
-              <b-nav-item to="/Kategorije">Kategorije poslova</b-nav-item>
-              <b-nav-item to="/Poslodavci">Poslodavci</b-nav-item>
-              <b-nav-item v-if="!store.currentUser" to="/Login">Login</b-nav-item>
-              <b-nav-item v-if="!store.currentUser" to="/Register">Register</b-nav-item>
-              <b-nav-item v-if="store.currentUser" to="/User">Profil</b-nav-item>
+              <b-nav-item to="/home">Home</b-nav-item>
+              <b-nav-item to="/hitniPoslovi">Hitni poslovi</b-nav-item>
+              <b-nav-item to="/kategorije">Kategorije poslova</b-nav-item>
+              <b-nav-item to="/poslodavci">Poslodavci</b-nav-item>
+              <b-nav-item v-if="!store.currentUser" to="/login"
+                >Login</b-nav-item
+              >
+              <b-nav-item v-if="!store.currentUser" to="/register"
+                >Register</b-nav-item
+              >
+              <b-nav-item v-if="store.currentUser" to="/user"
+                >Profil</b-nav-item
+              >
               <b-nav-item v-if="store.currentUser">
                 <a href="#" @click.prevent="logout()">Logout</a>
               </b-nav-item>
-              </b-navbar-nav>
+            </b-navbar-nav>
 
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto" right>
@@ -40,7 +48,7 @@
                   Pretraži
                 </button>
               </b-nav-item>
-              <b-nav-item v-if="store.currentUser" to="/PredajOglas">
+              <b-nav-item v-if="store.currentUser" to="/predajOglas">
                 <button class="btn btn-warning" type="button">
                   Predaj Oglas
                 </button>
@@ -164,6 +172,7 @@
     if (user) {
       console.log(user.email);
       store.currentUser = user.email;
+
       if (!currentRoute.meta.needsUser) {
         router.push({ name: "home" });
       }

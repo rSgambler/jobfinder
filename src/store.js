@@ -1,3 +1,4 @@
-export default{
-    currentUser : null
-}
+export default {
+  currentUser: null,
+  username: null,
+};

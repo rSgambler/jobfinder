@@ -12,9 +12,9 @@
             <a href="#" class="twitter btn">
               <i class="fa fa-twitter fa-fw"></i> Login with Twitter
             </a>
-            <a href="#" class="google btn">
-              <i class="fa fa-google fa-fw"></i> Login with Google+
-            </a>
+            <button @click="loginWithGoogle" class="google btn">
+              Login with Google+
+            </button>
           </div>
 
           <div class="col">
@@ -33,11 +33,13 @@
               required
             />
             <input class="btn" type="button" @click="login" value="Login" />
-            <div class="d-flex justify-content-center p_link">
+            <!-- <div class="d-flex justify-content-center p_link">
               <a href="#">Forgot your password?</a>
-            </div>
+            </div> -->
             <div class="d-flex justify-content-center s_link">
-              <a href="#">Don't Have an Account?</a>
+              <router-link to="register">
+                <a> Don't Have an Account?</a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -57,6 +59,10 @@
       };
     },
     methods: {
+      loginWithGoogle() {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithRedirect(provider);
+      },
       login() {
         console.log(this.username);
         firebase

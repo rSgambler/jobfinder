@@ -10,9 +10,6 @@ const routes = [
     path: "/",
     name: "home",
     component: Home,
-    meta: {
-      needsUser: false,
-    },
   },
   {
     path: "/login",
@@ -72,35 +69,11 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   //svaki puta prije nego što se ruta promjeni
   const noUser = store.currentUser === null;
-  console.log(
-    "Sadašnja ruta",
-    from.name,
-    "-> ",
-    to.name,
-    "korisnik",
-    store.currentUser
-  );
 
   if (noUser && to.meta.needsUser) {
-    console.log("NEMOŽEŠ PRISTUPITI");
     alert("Za pristup ovoj stranici se morate prijavit");
     next("login");
   } else next();
-  //   if (to.matched.some((record) => record.meta.authRequired)) {
-  //     console.log("1.if");
-  //     if (firebase.auth().currentUser) {
-  //       console.log("2.if");
-  //       next();
-  //     } else {
-  //       console.log("2.else");
-  //       alert("You must be logged in to see this page");
-  //       next({
-  //         path: "/",
-  //       });
-  //     }
-  //   } else {
-  //     console.log("1.else");
-  //     next();
-  //   }
 });
+
 export default router;

@@ -35,7 +35,9 @@
             />
 
             <div class="d-flex justify-content-center s_link">
-              <a href="#">Already have an account?</a>
+              <router-link to="login">
+                <a>Already have an account?</a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -46,6 +48,7 @@
 
 <script>
   import { firebase } from "@/firebase";
+  import store from "@/store";
   export default {
     name: "Register",
     data() {
@@ -60,15 +63,18 @@
         firebase
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password)
-          .then(function() {
-            console.log("Uspješna registracija");
+          .then((data) => {
+            data.user
+              .updateProfile({
+                displayName: this.username,
+              })
+              .then(() => {});
           })
           .catch(function(error) {
             alert(error);
           });
-           this.$router.push('/home');
+        this.$router.push("/home");
       },
-      
     },
   };
 </script>
@@ -87,7 +93,6 @@
     box-sizing: border-box;
   }
 
- 
   .container {
     width: 40%;
     position: absolute;
@@ -100,7 +105,6 @@
     color: white;
   }
 
- 
   input,
   .btn {
     width: 100%;
@@ -112,7 +116,7 @@
     display: inline-block;
     font-size: 22px;
     line-height: 25px;
-    text-decoration: none; 
+    text-decoration: none;
   }
 
   input:hover,
