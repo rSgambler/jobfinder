@@ -1,9 +1,8 @@
 <template>
-  <div id="header" class="postion-relative vh-100">
-    <div id="app" class="position-relative">
+    <div id="app" class="position-relative vh-100">
       <div id="nav" class="jf-navbar">
         <b-navbar class="justify-content-between" togglable="lg" type="dark">
-          <b-navbar-brand href="#">
+          <b-navbar-brand>
             <b-nav-item to="/home">
               <h1>JF</h1>
             </b-nav-item>
@@ -20,19 +19,13 @@
               <b-nav-item to="/hitniPoslovi">Hitni poslovi</b-nav-item>
               <b-nav-item to="/kategorije">Kategorije poslova</b-nav-item>
               <b-nav-item to="/poslodavci">Poslodavci</b-nav-item>
-              <b-nav-item v-if="!store.currentUser" to="/login"
-                >Login</b-nav-item
-              >
-              <b-nav-item v-if="!store.currentUser" to="/register"
-                >Register</b-nav-item
-              >
-              <b-nav-item v-if="store.currentUser" to="/user"
-                >Profil</b-nav-item
-              >
+              <b-nav-item v-if="!store.currentUser" to="/login">Login</b-nav-item>
+              <b-nav-item v-if="!store.currentUser" to="/register">Register</b-nav-item>
+              <b-nav-item v-if="store.currentUser" to="/user">Profil</b-nav-item>
               <b-nav-item v-if="store.currentUser">
                 <a href="#" @click.prevent="logout()">Logout</a>
               </b-nav-item>
-            </b-navbar-nav>
+              </b-navbar-nav>
 
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto" right>
@@ -57,9 +50,9 @@
           </b-collapse>
         </b-navbar>
       </div>
+      <Footer> </Footer>
       <router-view />
-    </div>
-    <Footer> </Footer>
+    
   </div>
 </template>
 
