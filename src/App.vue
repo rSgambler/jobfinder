@@ -3,9 +3,7 @@
       <div id="nav" class="jf-navbar">
         <b-navbar class="justify-content-between" togglable="lg" type="dark">
           <b-navbar-brand>
-            <b-nav-item to="/home">
               <h1>JF</h1>
-            </b-nav-item>
           </b-navbar-brand>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>

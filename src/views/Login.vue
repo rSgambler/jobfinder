@@ -1,5 +1,5 @@
 <template>
-  <div id="login">
+  <div id="login" class="position-relative vh-100">
     <div class="container">
       <form action="/action_page.php">
         <div class="row">
@@ -45,7 +45,8 @@
         </div>
       </form>
     </div>
-  </div>
+    </div>
+    
 </template>
 <script>
   import { firebase } from "@/firebase";
@@ -96,14 +97,11 @@
   }
 
   .container {
-    top: 50%;
-    left: 50%;
+    margin-right: 10%;
     transform: translate(-50%, 50%);
     width: 40%;
-    position: absolute;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.85);
-    padding: 30px 0 30px 0;
   }
 
   input,

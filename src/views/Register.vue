@@ -1,5 +1,5 @@
 <template>
-  <div id="register">
+  <div id="register" class="position-relative vh-100">
     <div class="container">
       <form action="/action_page.php">
         <div class="row">
@@ -79,6 +79,10 @@
   };
 </script>
 <style scoped>
+
+  h3{
+    color: white;
+  }
   .btn {
     background-color: #45a049;
   }
@@ -94,15 +98,11 @@
   }
 
   .container {
+    margin-right: 10%;
+    transform: translate(-50%, 50%);
     width: 40%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 45%);
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.85);
-    padding: 30px 0 30px 0;
-    color: white;
   }
 
   input,
