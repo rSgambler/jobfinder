@@ -30,7 +30,7 @@
                     />
                     <div class="d-flex justify-content-center s_link">
                     <router-link to="login">
-                    <a class="forgot text-muted" href="#">Već ste registrirani?</a> 
+                    <a class="forgot" href="#">Već ste registrirani?</a> 
                     </router-link>
                     </div>
                     <input class="btn" type="button" @click="register" value="Register" />
@@ -157,7 +157,8 @@
 }
 
 .forgot {
-    text-decoration: underline
+    text-decoration: underline;
+    color: white;
 }
 
 .unesi{

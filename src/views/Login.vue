@@ -6,7 +6,7 @@
             <div class="card">
                 <form onsubmit="event.preventDefault()" class="box">
                     <h1 class="prijava">Prijava</h1>
-                    <p class="unesi text-muted"> Please enter your e-mail and password!</p> 
+                    <p class="unesi"> Please enter your e-mail and password!</p> 
                     <input
                       v-model="email"
                       type="text"
@@ -21,7 +21,7 @@
                     placeholder="Password"
                     required
                     />
-                    <a class="forgot text-muted" href="#">Forgot password?</a> 
+                    <a class="forgot" href="#">Forgot password?</a> 
                     <input class="btn" type="button" @click="login" value="Login" />
                     <div class="col-md-12">
                         <ul class="social-network social-circle">
@@ -123,6 +123,7 @@
 }
 
 .box input[type="button"] {
+    width: 50%;
     border: 0;
     background: none;
     display: block;
@@ -142,11 +143,13 @@
 }
 
 .forgot {
-    text-decoration: underline
+    text-decoration: underline;
+    color: white;
 }
 
 .unesi{
-      text-decoration: underline
+      text-decoration: underline;
+      color: white;
 }
 
 ul.social-network {
