@@ -32,7 +32,7 @@ const routes = [
   {
     path: "/hitniPoslovi",
     name: "hitniPoslovi",
-    component: () => import("../views/User.vue"),
+    component: () => import("../views/HitniPoslovi.vue"),
   },
   {
     path: "/kategorije",
