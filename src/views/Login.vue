@@ -25,9 +25,7 @@
                     <input class="btn" type="button" @click="login" value="Login" />
                     <div class="col-md-12">
                         <ul class="social-network social-circle">
-                          <button @click="loginWithGoogle" class="google btn">
-                              Login with Google+
-                          </button>
+                          <input class="google" type="button" @click="loginWithGoogle" value="Google+"/>
                         </ul>
                     </div>
                 </form>
@@ -70,14 +68,11 @@
 </script>
 <style scoped>
 
+
 .prijava{
   font-family: 'Times New Roman';
 }
 
-.google{
-  margin-right: 30px;
-  color: white;
-}
   body {
     margin: 0;
     padding: 0;
@@ -131,7 +126,7 @@
     border: 0;
     background: none;
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
     text-align: center;
     border: 2px solid #2ecc71;
     padding: 14px 40px;
@@ -153,5 +148,16 @@
 .unesi{
       text-decoration: underline
 }
+
+ul.social-network {
+    list-style: none;
+    margin-left: 0 !important;
+    padding: 0
+}
+
+
+
+
+
 
 </style>
