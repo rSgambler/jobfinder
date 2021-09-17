@@ -3,6 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
+<<<<<<< HEAD
           <div class="card">
             <form onsubmit="event.preventDefault()" class="box">
               <h1 class="prijava">Prijava</h1>
@@ -34,6 +35,35 @@
               </div>
             </form>
           </div>
+=======
+            <div class="card">
+                <form onsubmit="event.preventDefault()" class="box">
+                    <h1 class="prijava">Prijava</h1>
+                    <p class="unesi text-muted"> Please enter your e-mail and password!</p> 
+                    <input
+                      v-model="email"
+                      type="text"
+                      name="email"
+                      placeholder="Email"
+                      required
+                      />
+                    <input
+                    v-model="password"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                    />
+                    <a class="forgot text-muted" href="#">Forgot password?</a> 
+                    <input class="btn" type="button" @click="login" value="Login" />
+                    <div class="col-md-12">
+                        <ul class="social-network social-circle">
+                          <input class="google" type="button" @click="loginWithGoogle" value="Google+"/>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+>>>>>>> parent of 84d85f5 (Edit teksta Login+Register)
         </div>
       </div>
     </div>
@@ -128,7 +158,11 @@
     border-color: #2ecc71;
   }
 
+<<<<<<< HEAD
   .box input[type="button"] {
+=======
+.box input[type="button"] {
+>>>>>>> parent of 84d85f5 (Edit teksta Login+Register)
     border: 0;
     background: none;
     display: block;
@@ -147,9 +181,25 @@
     border: 5px solid #4ecc2e;
   }
 
+<<<<<<< HEAD
   .forgot {
     text-decoration: underline;
   }
+=======
+.forgot {
+    text-decoration: underline
+}
+
+.unesi{
+      text-decoration: underline
+}
+
+ul.social-network {
+    list-style: none;
+    margin-left: 0 !important;
+    padding: 0
+}
+>>>>>>> parent of 84d85f5 (Edit teksta Login+Register)
 
   .unesi {
     text-decoration: underline;
