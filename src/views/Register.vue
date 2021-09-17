@@ -79,7 +79,6 @@
   };
 </script>
 <style scoped>
-<<<<<<< HEAD
   h3 {
     color: white;
   }
@@ -102,33 +101,6 @@
     transform: translate(-50%, 50%);
     width: 40%;
     border-radius: 10px;
-=======
-
-  .registracija{
-  font-family: 'Times New Roman';
-}
-
-.google{
-  margin-right: 30px;
-  color: white;
-}
-  body {
-    margin: 0;
-    padding: 0;
-}
-
-.card {
-    margin-bottom: 20px;
-    border: none
-}
-
-.box {
-    width: 500px;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
->>>>>>> 84d85f51a6737db742a58c957d17830a9c0c1b9f
     background: rgba(0, 0, 0, 0.85);
     border-radius: 15px;
     text-align: center;
