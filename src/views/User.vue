@@ -16,23 +16,21 @@
                       height="50"
                     />
                   </div>
-                  <h6 class="f-w-600">{{ username }}</h6>
-                  <p>Web Designer</p>
-                  <i
-                    class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"
-                  ></i>
+                  <h5 class="f-w-600">{{ username }}</h5>
+                  <h6 class="opis">Web Designer</h6>
+                  <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                 </div>
               </div>
               <div class="col-sm-8">
                 <div class="card-block">
-                  <h5 class="m-b-20 p-b-5 b-b-default f-w-600">Profil</h5>
+                  <h4 class="m-b-20 p-b-5 b-b-default f-w-600">Profil</h4>
                   <div class="row">
                     <div class="col-sm-6">
-                      <p class="m-b-10 f-w-600">Email</p>
+                      <h5 class="m-b-10 f-w-600">Email</h5>
                       <h6 class="text-muted f-w-400">{{ email }}</h6>
                     </div>
                     <div class="col-sm-6">
-                      <p class="m-b-10 f-w-600">Mobitel</p>
+                      <h5 class="m-b-10 f-w-600">Mobitel</h5>
                       <h6 class="text-muted f-w-400">099 888 777</h6>
                     </div>
                   </div>
@@ -47,6 +45,22 @@
 </template>
 
 <style scoped>
+
+  .f-w-600{
+    color: black;
+  }
+
+  .m-b-10{
+    color: white;
+    text-decoration: underline
+  }
+
+  .m-b-20{
+    color: white;
+  }
+  .opis{
+    color: black;
+  }
   .user-card-full {
     width: 50%;
     position: absolute;
@@ -60,9 +74,10 @@
   }
 
   .card {
-    border-radius: 5px;
+    border-radius: 15px;
     -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
     box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    background: rgba(0, 0, 0, 0.85);
     border: none;
     margin-bottom: 30px;
   }
@@ -76,7 +91,7 @@
   }
 
   .user-card-full .user-profile {
-    border-radius: 5px 0 0 5px;
+    border-radius: 10px 0 0 10px;
   }
 
   .bg-c-lite-green {
@@ -102,10 +117,6 @@
     margin-bottom: 25px;
   }
 
-  .img-radius {
-    border-radius: 5px;
-  }
-
   h6 {
     font-size: 14px;
   }
@@ -125,7 +136,7 @@
   }
 
   .b-b-default {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 10px solid #e0e0e0;
   }
 
   .m-b-20 {
@@ -145,7 +156,7 @@
   }
 
   .text-muted {
-    color: #919aa3 !important;
+    color: white !important;
   }
 
   .b-b-default {
@@ -153,7 +164,7 @@
   }
 
   .f-w-600 {
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .m-b-20 {
@@ -169,7 +180,7 @@
   }
 
   .m-b-10 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   .m-t-40 {

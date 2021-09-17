@@ -1,49 +1,49 @@
 <template>
-  <div id="register" class="position-relative vh-100">
+  <body>
     <div class="container">
-      <form action="/action_page.php">
-        <div class="row">
-          <h3 style="text-align:center">Register</h3>
-
-          <div class="col">
-            <input
-              v-model="username"
-              type="text"
-              name="username"
-              placeholder="Username"
-              required
-            />
-            <input
-              v-model="password"
-              type="password"
-              name="password"
-              placeholder="Password"
-              required
-            />
-            <input
-              v-model="email"
-              type="text"
-              name="e-mail"
-              placeholder="E-mail"
-              required
-            />
-            <input
-              class="btn"
-              type="button"
-              @click="register"
-              value="Sign up"
-            />
-
-            <div class="d-flex justify-content-center s_link">
-              <router-link to="login">
-                <a>Already have an account?</a>
-              </router-link>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form onsubmit="event.preventDefault()" class="box">
+                    <h1 class="registracija">Registriraj se</h1>
+                    <p class="unesi">Unesite podatke za registraciju</p> 
+                    <input
+                    v-model="username"
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    required
+                    />
+                    <input
+                    v-model="password"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                    />
+                    <input
+                    v-model="email"
+                    type="text"
+                    name="e-mail"
+                    placeholder="E-mail"
+                    required
+                    />
+                    <div class="d-flex justify-content-center s_link">
+                    <router-link to="login">
+                    <a class="forgot" href="#">Već ste registrirani?</a> 
+                    </router-link>
+                    </div>
+                    <input class="btn" type="button" @click="register" value="Register" />
+                    <div class="col-md-12">
+                        <ul class="social-network social-circle">
+                        </ul>
+                    </div>
+                </form>
             </div>
-          </div>
         </div>
-      </form>
     </div>
-  </div>
+</div>
+</body>
 </template>
 
 <script>
@@ -79,6 +79,7 @@
   };
 </script>
 <style scoped>
+<<<<<<< HEAD
   h3 {
     color: white;
   }
@@ -101,90 +102,92 @@
     transform: translate(-50%, 50%);
     width: 40%;
     border-radius: 10px;
+=======
+
+  .registracija{
+  font-family: 'Times New Roman';
+}
+
+.google{
+  margin-right: 30px;
+  color: white;
+}
+  body {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    margin-bottom: 20px;
+    border: none
+}
+
+.box {
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+>>>>>>> 84d85f51a6737db742a58c957d17830a9c0c1b9f
     background: rgba(0, 0, 0, 0.85);
-  }
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px
+}
 
-  input,
-  .btn {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    margin: 5px 0;
-    opacity: 0.85;
-    display: inline-block;
-    font-size: 22px;
-    line-height: 25px;
-    text-decoration: none;
-  }
-
-  input:hover,
-  .btn:hover {
-    opacity: 1;
-  }
-
-  /* add appropriate colors to fb, twitter and google buttons */
-  .fb {
-    background-color: #3b5998;
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
     color: white;
-  }
+    border-radius: 24px;
+    transition: 0.25s
+}
 
-  .twitter {
-    background-color: #55acee;
+.box h1 {
     color: white;
-  }
+}
 
-  .google {
-    background-color: #dd4b39;
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    width: 300px;
+    border-color: #2ecc71
+}
+
+.box input[type="button"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
     color: white;
-  }
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+}
 
-  /* style the submit button */
-  input[type="submit"] {
-    background-color: #4caf50;
+.box input[type="button"]:hover {
+      border: 5px solid #4ecc2e;
+}
+
+.forgot {
+    text-decoration: underline;
     color: white;
-    cursor: pointer;
-  }
+}
 
-  input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-
-  /* Two-column layout */
-  .col {
-    float: left;
-    width: 50%;
-    margin: auto;
-    padding: 0 50px;
-    margin-top: 6px;
-  }
-
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  /* hide some text on medium and large screens */
-  .hide-md-lg {
-    display: none;
-  }
-
-  /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 650px) {
-    .col {
-      width: 100%;
-      margin-top: 0;
-    }
-    /* hide the vertical line */
-    .vl {
-      display: none;
-    }
-    /* show the hidden text on small screens */
-    .hide-md-lg {
-      display: block;
-      text-align: center;
-    }
-  }
+.unesi{
+      text-decoration: underline;
+      color: white;
+}
 </style>

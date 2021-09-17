@@ -3,6 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
+<<<<<<< HEAD
           <div class="card">
             <form onsubmit="event.preventDefault()" class="box">
               <h1 class="prijava">Prijava</h1>
@@ -34,6 +35,35 @@
               </div>
             </form>
           </div>
+=======
+            <div class="card">
+                <form onsubmit="event.preventDefault()" class="box">
+                    <h1 class="prijava">Prijava</h1>
+                    <p class="unesi"> Please enter your e-mail and password!</p> 
+                    <input
+                      v-model="email"
+                      type="text"
+                      name="email"
+                      placeholder="Email"
+                      required
+                      />
+                    <input
+                    v-model="password"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                    />
+                    <a class="forgot" href="#">Forgot password?</a> 
+                    <input class="btn" type="button" @click="login" value="Login" />
+                    <div class="col-md-12">
+                        <ul class="social-network social-circle">
+                          <input class="google" type="button" @click="loginWithGoogle" value="Google+"/>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+>>>>>>> 84d85f51a6737db742a58c957d17830a9c0c1b9f
         </div>
       </div>
     </div>
@@ -75,10 +105,18 @@
     font-family: "Times New Roman";
   }
 
+<<<<<<< HEAD
   .google {
     margin-right: 30px;
     color: white;
   }
+=======
+
+.prijava{
+  font-family: 'Times New Roman';
+}
+
+>>>>>>> 84d85f51a6737db742a58c957d17830a9c0c1b9f
   body {
     margin: 0;
     padding: 0;
@@ -128,11 +166,16 @@
     border-color: #2ecc71;
   }
 
+<<<<<<< HEAD
   .box input[type="button"] {
+=======
+.box input[type="button"] {
+    width: 50%;
+>>>>>>> 84d85f51a6737db742a58c957d17830a9c0c1b9f
     border: 0;
     background: none;
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
     text-align: center;
     border: 2px solid #2ecc71;
     padding: 14px 40px;
@@ -143,6 +186,7 @@
     cursor: pointer;
   }
 
+<<<<<<< HEAD
   .box input[type="button"]:hover {
     border: 5px solid #4ecc2e;
   }
@@ -155,3 +199,27 @@
     text-decoration: underline;
   }
 </style>
+=======
+.forgot {
+    text-decoration: underline;
+    color: white;
+}
+
+.unesi{
+      text-decoration: underline;
+      color: white;
+}
+
+ul.social-network {
+    list-style: none;
+    margin-left: 0 !important;
+    padding: 0
+}
+
+
+
+
+
+
+</style>
+>>>>>>> 84d85f51a6737db742a58c957d17830a9c0c1b9f
