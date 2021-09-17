@@ -79,8 +79,7 @@
   };
 </script>
 <style scoped>
-
-  h3{
+  h3 {
     color: white;
   }
   .btn {

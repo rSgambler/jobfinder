@@ -1,56 +1,57 @@
 <template>
-    <div id="app" class="position-relative vh-100">
-      <div id="nav" class="jf-navbar">
-        <b-navbar class="justify-content-between" togglable="lg" type="dark">
-          <b-navbar-brand>
-              <h1>JF</h1>
-          </b-navbar-brand>
+  <div id="app" class="position-relative vh-100">
+    <div id="nav" class="jf-navbar">
+      <b-navbar class="justify-content-between" togglable="lg" type="dark">
+        <b-navbar-brand>
+          <h1>JF</h1>
+        </b-navbar-brand>
 
-          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-          <b-collapse id="nav-collapse" class="justify-content-between" is-nav>
-            <b-navbar-nav class="align-items-baseline">
-              <b-nav-item to="/home">
-                <h4>Job Finder</h4>
-              </b-nav-item>
-              <b-nav-item to="/home">Home</b-nav-item>
-              <b-nav-item to="/hitniPoslovi">Hitni poslovi</b-nav-item>
-              <b-nav-item to="/kategorije">Kategorije poslova</b-nav-item>
-              <b-nav-item to="/poslodavci">Poslodavci</b-nav-item>
-              <b-nav-item v-if="!store.currentUser" to="/login">Login</b-nav-item>
-              <b-nav-item v-if="!store.currentUser" to="/register">Register</b-nav-item>
-              <b-nav-item v-if="store.currentUser" to="/user">Profil</b-nav-item>
-              <b-nav-item v-if="store.currentUser">
-                <a href="#" @click.prevent="logout()">Logout</a>
-              </b-nav-item>
-              </b-navbar-nav>
+        <b-collapse id="nav-collapse" class="justify-content-between" is-nav>
+          <b-navbar-nav class="align-items-baseline">
+            <b-nav-item to="/home">
+              <h4>Job Finder</h4>
+            </b-nav-item>
+            <b-nav-item to="/home">Home</b-nav-item>
+            <b-nav-item to="/hitniPoslovi">Hitni poslovi</b-nav-item>
+            <b-nav-item to="/kategorije">Kategorije poslova</b-nav-item>
+            <b-nav-item to="/poslodavci">Poslodavci</b-nav-item>
+            <b-nav-item v-if="!store.currentUser" to="/login">Login</b-nav-item>
+            <b-nav-item v-if="!store.currentUser" to="/register"
+              >Register</b-nav-item
+            >
+            <b-nav-item v-if="store.currentUser" to="/user">Profil</b-nav-item>
+            <b-nav-item v-if="store.currentUser">
+              <a href="#" @click.prevent="logout()">Logout</a>
+            </b-nav-item>
+          </b-navbar-nav>
 
-            <!-- Right aligned nav items -->
-            <b-navbar-nav class="ml-auto" right>
-              <b-nav-item>
-                <input
-                  class="form-control mr-sm-2"
-                  type="search"
-                  placeholder="Pretraži Poslove"
-                />
-              </b-nav-item>
-              <b-nav-item>
-                <button class="btn btn-warning" type="submit">
-                  Pretraži
-                </button>
-              </b-nav-item>
-              <b-nav-item v-if="store.currentUser" to="/predajOglas">
-                <button class="btn btn-warning" type="button">
-                  Predaj Oglas
-                </button>
-              </b-nav-item>
-            </b-navbar-nav>
-          </b-collapse>
-        </b-navbar>
-      </div>
-      <Footer> </Footer>
-      <router-view />
-    
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto" right>
+            <b-nav-item>
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Pretraži Poslove"
+              />
+            </b-nav-item>
+            <b-nav-item>
+              <button class="btn btn-warning" type="submit">
+                Pretraži
+              </button>
+            </b-nav-item>
+            <b-nav-item v-if="store.currentUser" to="/predajOglas">
+              <button class="btn btn-warning" type="button">
+                Predaj Oglas
+              </button>
+            </b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
+    <Footer> </Footer>
+    <router-view />
   </div>
 </template>
 
