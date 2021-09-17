@@ -5,48 +5,36 @@
             <div class="card mt-3">
                 <div class="product-1 align-items-center p-2 text-center"> <img src="https://i.imgur.com/fcRasFv.jpg" class="rounded" width="160">
                     <h5 class="title">Košnja trave</h5>
-                    <div class="mt-3 info">
-                        <span class="text1 d-block">Potrebna osoba za košnju bla bla...</span>
-                    </div>
+                    <div class="mt-3 info"> <span class="text1 d-block">Potrebna osoba za košnju bla bla...</span> <span class="text1">cleansing water. 125 ml </span> </div>
                     <div class=" cost mt-3 text-dark"> 
                       <span>150Kn</span>
                     </div>
                 </div>
-                <div class="product-1 p-3 text-center text-white mt-3 cursor"> 
-                    <input class="btn" type="button" value="Preuzmi posao"/>
-                </div>
+                <div class="p-3 bg-danger text-center text-white mt-3 cursor"> <span class="text-uppercase">Add to cart</span> </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card mt-3">
                 <div class="product-1 align-items-center p-2 text-center"> <img src="https://i.imgur.com/vD8fgks.jpg" class="rounded" width="160">
                     <h5 class="title">Šetnja psa</h5>
-                    <div class="mt-3 info">
-                        <span class="text1 d-block">Šetnja umiljatog psa rexa bla bla..</span>
-                    </div>
+                    <div class="mt-3 info"> <span class="text1 d-block">Šetnja umiljatog psa rexa bla bla..</span> <span class="text1">cleansing water.</span> </div>
                     <div class=" cost mt-3 text-dark"> 
                       <span>100Kn</span>
                     </div>
                 </div>
-                <div class=" p-3 text-center text-white mt-3 cursor">
-                    <input class="btn" type="button" value="Preuzmi posao"/>
-                </div>
+                <div class="watch p-3 text-center text-white mt-3 cursor"> <span class="text-uppercase ">Add to cart</span> </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card mt-3">
                 <div class="product-1 align-items-center p-2 text-center"> <img src="https://i.imgur.com/Iy7w1yJ.jpg" class="rounded" width="160">
                     <h5 class="title">Kopanje</h5>
-                    <div class="mt-3 info">
-                        <span class="text1 d-block">Kopanje vrta 100 kvadrata bla bla..</span> 
-                    </div>
+                    <div class="mt-3 info"> <span class="text1 d-block">Kopavnje vrta 100 kvadrata bla bla..</span> <span class="text1">cleansing water. 125 ml </span> </div>
                     <div class=" cost mt-3 text-dark"> 
-                      <span>2000Kn</span>
+                      <span>200Kn</span>
                     </div>
                 </div>
-                <div class="product-1 p-3 text-center text-white mt-3 cursor">
-                    <input class="btn" type="button" value="Preuzmi posao"/>
-                </div>
+                <div class=" tshirt p-3 text-center text-white mt-3 cursor"> <span class="text-uppercase">Add to cart</span> </div>
             </div>
         </div>
     </div>
@@ -84,25 +72,22 @@
     color: #cbcbcb
 }
 
+.info {
+    line-height: 17px
+}
+
+.watch {
+    background: #286783
+}
+
 .cost span {
     color: white;
     font-weight: bold;
     font-size: 20px
 }
 
-.btn {
-    color: white;
-    width: 50%;
-    border: 0;
-    background: none;
-    display: block;
-    margin: 15px auto;
-    text-align: center;
-    outline: none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
-    cursor: pointer
+.tshirt {
+    background-color: #0012b2
 }
 
 .cursor {

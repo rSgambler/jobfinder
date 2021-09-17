@@ -79,37 +79,39 @@
   };
 </script>
 <style scoped>
-  h3 {
+  .prijava {
+    font-family: "Times New Roman";
+  }
+
+  .google {
+    margin-right: 30px;
     color: white;
   }
-  .btn {
-    background-color: #45a049;
-  }
-  .p_link a {
-    color: rgb(250, 64, 64) !important;
-  }
-  .s_link a {
-    color: #55acee !important;
+  body {
+    margin: 0;
+    padding: 0;
   }
 
-  * {
-    box-sizing: border-box;
+  .card {
+    margin-bottom: 20px;
+    border: none;
   }
 
-  .container {
-    margin-right: 10%;
-    transform: translate(-50%, 50%);
-    width: 40%;
-    border-radius: 10px;
+  .box {
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     background: rgba(0, 0, 0, 0.85);
     border-radius: 15px;
     text-align: center;
     transition: 0.25s;
-    margin-top: 100px
-}
+    margin-top: 100px;
+  }
 
-.box input[type="text"],
-.box input[type="password"] {
+  .box input[type="text"],
+  .box input[type="password"] {
     border: 0;
     background: none;
     display: block;
@@ -121,24 +123,24 @@
     outline: none;
     color: white;
     border-radius: 24px;
-    transition: 0.25s
-}
+    transition: 0.25s;
+  }
 
-.box h1 {
+  .box h1 {
     color: white;
-}
+  }
 
-.box input[type="text"]:focus,
-.box input[type="password"]:focus {
+  .box input[type="text"]:focus,
+  .box input[type="password"]:focus {
     width: 300px;
-    border-color: #2ecc71
-}
+    border-color: #2ecc71;
+  }
 
 .box input[type="button"] {
     border: 0;
     background: none;
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
     text-align: center;
     border: 2px solid #2ecc71;
     padding: 14px 40px;
@@ -146,19 +148,28 @@
     color: white;
     border-radius: 24px;
     transition: 0.25s;
-    cursor: pointer
-}
+    cursor: pointer;
+  }
 
-.box input[type="button"]:hover {
-      border: 5px solid #4ecc2e;
-}
+  .box input[type="button"]:hover {
+    border: 5px solid #4ecc2e;
+  }
 
 .forgot {
     text-decoration: underline
 }
 
 .unesi{
-      text-decoration: underline;
-      color: white;
+      text-decoration: underline
 }
+
+ul.social-network {
+    list-style: none;
+    margin-left: 0 !important;
+    padding: 0
+}
+
+  .unesi {
+    text-decoration: underline;
+  }
 </style>
