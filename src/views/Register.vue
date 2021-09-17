@@ -6,7 +6,7 @@
             <div class="card">
                 <form onsubmit="event.preventDefault()" class="box">
                     <h1 class="registracija">Registriraj se</h1>
-                    <p class="unesi">Unesite podatke za registraciju</p> 
+                    <p class="unesi text-muted">Unesite podatke za registraciju</p> 
                     <input
                     v-model="username"
                     type="text"
@@ -79,7 +79,7 @@
   };
 </script>
 <style scoped>
-  .prijava {
+  .registracija {
     font-family: "Times New Roman";
   }
 
