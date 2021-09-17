@@ -12,8 +12,8 @@
                       <span>150Kn</span>
                     </div>
                 </div>
-                <div class="p-3 bg-danger text-center text-white mt-3 cursor"> 
-                    <span class="text-uppercase">Add to cart</span>
+                <div class="product-1 p-3 text-center text-white mt-3 cursor"> 
+                    <input class="btn" type="button" value="Preuzmi posao"/>
                 </div>
             </div>
         </div>
@@ -28,8 +28,8 @@
                       <span>100Kn</span>
                     </div>
                 </div>
-                <div class="watch p-3 text-center text-white mt-3 cursor">
-                    <span class="text-uppercase ">Add to cart</span>
+                <div class=" p-3 text-center text-white mt-3 cursor">
+                    <input class="btn" type="button" value="Preuzmi posao"/>
                 </div>
             </div>
         </div>
@@ -44,8 +44,8 @@
                       <span>2000Kn</span>
                     </div>
                 </div>
-                <div class=" tshirt p-3 text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Add to cart</span>
+                <div class="product-1 p-3 text-center text-white mt-3 cursor">
+                    <input class="btn" type="button" value="Preuzmi posao"/>
                 </div>
             </div>
         </div>
@@ -84,22 +84,25 @@
     color: #cbcbcb
 }
 
-.info {
-    line-height: 17px
-}
-
-.watch {
-    background: #286783
-}
-
 .cost span {
     color: white;
     font-weight: bold;
     font-size: 20px
 }
 
-.tshirt {
-    background-color: #0012b2
+.btn {
+    color: white;
+    width: 50%;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
 }
 
 .cursor {
