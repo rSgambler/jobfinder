@@ -18,7 +18,9 @@
                   </div>
                   <h5 class="f-w-600">{{ username }}</h5>
                   <h6 class="opis">Web Designer</h6>
-                  <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                  <i
+                    class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"
+                  ></i>
                 </div>
               </div>
               <div class="col-sm-8">
@@ -45,175 +47,172 @@
 </template>
 
 <style scoped>
+.f-w-600 {
+  color: black;
+}
 
-  .f-w-600{
-    color: black;
-  }
+.m-b-10 {
+  color: white;
+  text-decoration: underline;
+}
 
-  .m-b-10{
-    color: white;
-    text-decoration: underline
-  }
+.m-b-20 {
+  color: white;
+}
+.opis {
+  color: black;
+}
+.user-card-full {
+  width: 50%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  margin-bottom: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
 
-  .m-b-20{
-    color: white;
-  }
-  .opis{
-    color: black;
-  }
-  .user-card-full {
-    width: 50%;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
-    margin-bottom: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
+.card {
+  border-radius: 15px;
+  -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+  background: rgba(0, 0, 0, 0.85);
+  border: none;
+  margin-bottom: 30px;
+}
 
-  .card {
-    border-radius: 15px;
-    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-    background: rgba(0, 0, 0, 0.85);
-    border: none;
-    margin-bottom: 30px;
-  }
+.m-r-0 {
+  margin-right: 0px;
+}
 
-  .m-r-0 {
-    margin-right: 0px;
-  }
+.m-l-0 {
+  margin-left: 0px;
+}
 
-  .m-l-0 {
-    margin-left: 0px;
-  }
+.user-card-full .user-profile {
+  border-radius: 10px 0 0 10px;
+}
 
-  .user-card-full .user-profile {
-    border-radius: 10px 0 0 10px;
-  }
+.bg-c-lite-green {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff8800),
+    to(#f1b603)
+  );
+  background: linear-gradient(to right, #ff8800, #f1b603);
+}
 
-  .bg-c-lite-green {
-    background: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(#ff8800),
-      to(#f1b603)
-    );
-    background: linear-gradient(to right, #ff8800, #f1b603);
-  }
+.user-profile {
+  padding: 20px 0;
+}
 
-  .user-profile {
-    padding: 20px 0;
-  }
+.card-block {
+  padding: 1.25rem;
+}
 
-  .card-block {
-    padding: 1.25rem;
-  }
+.m-b-25 {
+  margin-bottom: 25px;
+}
 
-  .m-b-25 {
-    margin-bottom: 25px;
-  }
+h6 {
+  font-size: 14px;
+}
 
-  h6 {
+.card .card-block p {
+  line-height: 25px;
+}
+
+@media only screen and (min-width: 1400px) {
+  p {
     font-size: 14px;
   }
+}
 
-  .card .card-block p {
-    line-height: 25px;
-  }
+.card-block {
+  padding: 1.25rem;
+}
 
-  @media only screen and (min-width: 1400px) {
-    p {
-      font-size: 14px;
-    }
-  }
+.b-b-default {
+  border-bottom: 10px solid #e0e0e0;
+}
 
-  .card-block {
-    padding: 1.25rem;
-  }
+.m-b-20 {
+  margin-bottom: 20px;
+}
 
-  .b-b-default {
-    border-bottom: 10px solid #e0e0e0;
-  }
+.p-b-5 {
+  padding-bottom: 5px !important;
+}
 
-  .m-b-20 {
-    margin-bottom: 20px;
-  }
+.card .card-block p {
+  line-height: 25px;
+}
 
-  .p-b-5 {
-    padding-bottom: 5px !important;
-  }
+.m-b-10 {
+  margin-bottom: 10px;
+}
 
-  .card .card-block p {
-    line-height: 25px;
-  }
+.text-muted {
+  color: white !important;
+}
 
-  .m-b-10 {
-    margin-bottom: 10px;
-  }
+.b-b-default {
+  border-bottom: 1px solid #e0e0e0;
+}
 
-  .text-muted {
-    color: white !important;
-  }
+.f-w-600 {
+  font-weight: 500;
+}
 
-  .b-b-default {
-    border-bottom: 1px solid #e0e0e0;
-  }
+.m-b-20 {
+  margin-bottom: 20px;
+}
 
-  .f-w-600 {
-    font-weight: 500;
-  }
+.m-t-40 {
+  margin-top: 20px;
+}
 
-  .m-b-20 {
-    margin-bottom: 20px;
-  }
+.p-b-5 {
+  padding-bottom: 5px !important;
+}
 
-  .m-t-40 {
-    margin-top: 20px;
-  }
+.m-b-10 {
+  margin-bottom: 15px;
+}
 
-  .p-b-5 {
-    padding-bottom: 5px !important;
-  }
+.m-t-40 {
+  margin-top: 20px;
+}
 
-  .m-b-10 {
-    margin-bottom: 15px;
-  }
+.user-card-full .social-link li {
+  display: inline-block;
+}
 
-  .m-t-40 {
-    margin-top: 20px;
-  }
-
-  .user-card-full .social-link li {
-    display: inline-block;
-  }
-
-  .user-card-full .social-link li a {
-    font-size: 20px;
-    margin: 0 10px 0 0;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-  }
+.user-card-full .social-link li a {
+  font-size: 20px;
+  margin: 0 10px 0 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
 </style>
 
 <script>
-  import { firebase } from "@/firebase";
-  import store from "@/store";
-  import router from "@/router";
+import { firebase } from "@/firebase";
+import store from "@/store";
+import router from "@/router";
+const user = firebase.auth().currentUser;
 
-  const user = firebase.auth().currentUser;
-  console.log(user);
-
-  export default {
-    name: "User",
-    data() {
-      return {
-        username: user.displayName,
-        email: user.email,
-      };
-    },
-  };
+export default {
+  name: "User",
+  data() {
+    return {
+      username: user.displayName,
+      email: user.email,
+    };
+  },
+};
 </script>

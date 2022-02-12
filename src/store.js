@@ -1,4 +1,7 @@
 export default {
-  currentUser: null,
-  username: null,
+  currentUser: {},
+  oglas: {
+    opis: "",
+    naziv: "",
+  },
 };

@@ -35,17 +35,9 @@ const routes = [
     component: () => import("../views/HitniPoslovi.vue"),
   },
   {
-    path: "/kategorije",
-    name: "kategorije",
-    component: () => import("../views/User.vue"),
-    meta: {
-      needsUser: true,
-    },
-  },
-  {
-    path: "/poslodavci",
-    name: "poslodavci",
-    component: () => import("../views/User.vue"),
+    path: "/poslovi",
+    name: "poslovi",
+    component: () => import("../views/Jobs.vue"),
     meta: {
       needsUser: true,
     },
@@ -53,7 +45,7 @@ const routes = [
   {
     path: "/predajOglas",
     name: "predajOglas",
-    component: () => import("../views/User.vue"),
+    component: () => import("../views/PredajOglas.vue"),
     meta: {
       needsUser: true,
     },
@@ -68,7 +60,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   //svaki puta prije nego što se ruta promjeni
-  const noUser = store.currentUser === null;
+  const noUser = store.currentUser === {};
 
   if (noUser && to.meta.needsUser) {
     alert("Za pristup ovoj stranici se morate prijavit");
