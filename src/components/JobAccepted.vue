@@ -59,7 +59,7 @@
 .card {
   border: none;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.85);
+  background: none;
 }
 
 .text1 {
@@ -76,17 +76,16 @@
 }
 
 .cost span {
-  color: white;
+  color: #E8E7E7;
   font-weight: bold;
-  font-size: 20px;
+ 
 }
 
 .btn {
-  color: black;
+  color: #E8E7E7;
   width: auto;
-  border: 0;
+  border: 2px solid #ffc312;
   background: none;
-  background-color: #ffc312;
   display: block;
   margin: 15px auto;
   text-align: center;

@@ -7,7 +7,7 @@
             <form onsubmit="event.preventDefault()" class="box">
               <h1 class="prijava">Prijava</h1>
               <p class="unesi text-muted">
-                Please enter your e-mail and password!
+                Unesite Vašu e-mail adresu i lozinku!
               </p>
               <input
                 v-model="email"
@@ -20,21 +20,12 @@
                 v-model="password"
                 type="password"
                 name="password"
-                placeholder="Password"
+                placeholder="Lozinka"
                 required
               />
-              <a class="forgot text-muted" href="#">Forgot password?</a>
+              <a class="forgot text-muted" href="#">Zaboravili ste lozinku?</a>
               <input class="btn" type="button" @click="login" value="Login" />
-              <div class="col-md-12">
-                <ul class="social-network social-circle">
-                  <input
-                    class="google"
-                    type="button"
-                    @click="loginWithGoogle"
-                    value="Google+"
-                  />
-                </ul>
-              </div>
+              
             </form>
           </div>
         </div>
@@ -56,10 +47,6 @@ export default {
     };
   },
   methods: {
-    loginWithGoogle() {
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithRedirect(provider);
-    },
     login() {
       //console.log(this.username);
       firebase

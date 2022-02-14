@@ -5,11 +5,10 @@
 </template>
 <style scoped>
 .footer {
-  position: absolute;
-  color: white;
+ position: fixed;
   bottom: 0;
-  left: 0;
   width: 100%;
-  text-align: center;
+  height: 2.5rem;  
+  color: white;
 }
 </style>

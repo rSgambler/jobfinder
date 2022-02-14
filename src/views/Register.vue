@@ -46,7 +46,7 @@
                 class="btn"
                 type="button"
                 @click="register"
-                value="Register"
+                value="Registriraj se"
               />
               <div class="col-md-12">
                 <ul class="social-network social-circle"></ul>

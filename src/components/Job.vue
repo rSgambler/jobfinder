@@ -81,8 +81,9 @@
   color: black;
   width: auto;
   border: 0;
+  color:#E8E7E7;
+  border: 2px solid #ffc312;
   background: none;
-  background-color: #ffc312;
   display: block;
   margin: 15px auto;
   text-align: center;

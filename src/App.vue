@@ -53,8 +53,9 @@
         </b-collapse>
       </b-navbar>
     </div>
-    <Footer> </Footer>
+    
     <router-view />
+    <Footer> </Footer>
   </div>
 </template>
 

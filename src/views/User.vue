@@ -38,7 +38,7 @@
                 </div>
               </div>
             </div>
-            <div class="card mt-4">
+            <div class="mt-4">
               <div class="card-header">
                 Prihvaćeni poslovi
               </div>
@@ -48,7 +48,7 @@
                 :oglas="oglas"
               ></JobAccepted>
             </div>
-            <div class="card mt-4">
+            <div class="mt-4">
               <div class="card-header">
                 Završeni poslovi
               </div>
@@ -58,7 +58,7 @@
                 :oglas="oglas"
               ></JobAccepted>
             </div>
-            <div class="card mt-4">
+            <div class="mt-4">
               <div class="card-header">
                 Ponuđeni poslovi
               </div>
@@ -104,6 +104,7 @@
 }
 
 .card {
+  color: #E8E7E7;
   border-radius: 15px;
   -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
   box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);

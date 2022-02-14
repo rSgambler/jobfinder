@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="row">
-      <Job v-for="oglas in oglasi" :key="oglas.id" :oglas="oglas"></Job>
+      <Job class="razmak" v-for="oglas in oglasi" :key="oglas.id" :oglas="oglas"></Job>
     </div>
-  </div>
+    </div>
 </template>
 <script>
 import { db, firebase } from "@/firebase";
@@ -47,3 +47,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.razmak{
+  margin-top: 5%;
+}
+</style>
