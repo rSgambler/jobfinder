@@ -27,19 +27,31 @@
               <label for="opisPosla" class="form-label">Opis Posla</label>
               <input
                 type="text"
-                class="form-control"
+                class="form-control opis_posla"
                 id="opisPosla"
                 v-model="opisPosla"
                 required
               />
             </div>
-            <div class="mb-3 col-12">
-              <label for="cijenaPosla" class="form-label">Cijena posla</label>
+            <div class="mb-3 col-6">
+              <label for="cijenaPosla" class="form-label"
+                >Cijena posla(u kunama)</label
+              >
               <input
                 type="number"
                 class="form-control"
                 id="cijenaPosla"
                 v-model="price"
+                required
+              />
+            </div>
+            <div class="mb-3 col-6">
+              <label for="lokacijaPosla" class="form-label">Lokacija</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lokacijaPosla"
+                v-model="location"
                 required
               />
             </div>
@@ -73,9 +85,12 @@
 .forma_za_predaj_oglas {
   border: 2px solid #000000;
   border-radius: 24px;
-  margin-top: 25%;
-  margin-left: 25%;
+  margin-top: 150px;
+  margin-left: 200px;
   background: #d1e7df;
+}
+.opis_posla {
+  height: 150px;
 }
 </style>
 
@@ -96,6 +111,7 @@ export default {
       store,
       jobs: [],
       hitanPosao: false,
+      location: "",
     };
   },
   methods: {
@@ -125,13 +141,16 @@ export default {
           category: this.kategorija,
           jobName: this.nazivOglasa,
           important: this.hitanPosao,
-          submittedBy: this.username,
+          userPostedJob: this.username,
           endTime: "",
-          numberOfSubmitter: this.userPhone,
+          numOfUserPosted: this.userPhone,
           price: this.price,
+          location: this.location,
+          userAccepted: "",
+          numOfUserAccepted: "",
         });
-        this.opisPosla = this.nazivOglasa = "";
-        this.price = "";
+        this.opisPosla = this.nazivOglasa = this.price = this.location = "";
+        alert("Oglas uspješno postavljen");
       } catch (err) {
         console.error(err);
       }

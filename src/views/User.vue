@@ -17,14 +17,13 @@
                     />
                   </div>
                   <h5 class="f-w-600">{{ username }}</h5>
-                  <h6 class="opis">Web Designer</h6>
                   <i
                     class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"
                   ></i>
                 </div>
               </div>
               <div class="col-sm-8">
-                <div class="card-block">
+                <div class="card-block ">
                   <h4 class="m-b-20 p-b-5 b-b-default f-w-600">Profil</h4>
                   <div class="row">
                     <div class="col-sm-6">
@@ -33,11 +32,41 @@
                     </div>
                     <div class="col-sm-6">
                       <h5 class="m-b-10 f-w-600">Mobitel</h5>
-                      <h6 class="text-muted f-w-400">099 888 777</h6>
+                      <h6 class="text-muted f-w-400">{{ userPhone }}</h6>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="card mt-4">
+              <div class="card-header">
+                Prihvaćeni poslovi
+              </div>
+              <JobAccepted
+                v-for="oglas in userJobsAccepted"
+                :key="oglas.id"
+                :oglas="oglas"
+              ></JobAccepted>
+            </div>
+            <div class="card mt-4">
+              <div class="card-header">
+                Završeni poslovi
+              </div>
+              <JobAccepted
+                v-for="oglas in userJobsEnded"
+                :key="oglas.id"
+                :oglas="oglas"
+              ></JobAccepted>
+            </div>
+            <div class="card mt-4">
+              <div class="card-header">
+                Ponuđeni poslovi
+              </div>
+              <JobAccepted
+                v-for="oglas in userJobsCreated"
+                :key="oglas.id"
+                :oglas="oglas"
+              ></JobAccepted>
             </div>
           </div>
         </div>
@@ -201,9 +230,10 @@ h6 {
 </style>
 
 <script>
-import { firebase } from "@/firebase";
+import { db, firebase } from "@/firebase";
 import store from "@/store";
 import router from "@/router";
+import JobAccepted from "@/components/JobAccepted.vue";
 const user = firebase.auth().currentUser;
 
 export default {
@@ -212,7 +242,50 @@ export default {
     return {
       username: user.displayName,
       email: user.email,
+      userPhone: "",
+      userJobsAccepted: [],
+      userJobsCreated: [],
+      userJobsEnded: [],
     };
+  },
+  methods: {
+    async getUser() {
+      const userQuery = await db.collection("users").get();
+      userQuery.forEach((doc) => {
+        if (doc.data().email === store.currentUser.email) {
+          this.userPhone = doc.data().phoneNumber;
+          this.username = doc.data().username;
+        }
+      });
+    },
+    async getAcceptedJobsForCurrentUser() {
+      const query = await db.collection("oglasi").get();
+      this.userJobsAccepted = [];
+      this.userJobsCreated = [];
+      this.userJobsEnded = [];
+      query.forEach((doc) => {
+        const document = doc.data();
+        document.id = doc.id;
+        if (document.userAccepted === this.username) {
+          if (document.endTime) {
+            this.userJobsEnded.push(document);
+          } else {
+            this.userJobsAccepted.push(document);
+          }
+        }
+        if (document.userPostedJob === this.username) {
+          this.userJobsCreated.push(document);
+        }
+      });
+    },
+  },
+  mounted() {
+    // Ovo se okida prilikom podizanja komponente
+    this.getUser();
+    this.getAcceptedJobsForCurrentUser();
+  },
+  components: {
+    JobAccepted,
   },
 };
 </script>

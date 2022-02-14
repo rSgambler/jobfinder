@@ -6,8 +6,9 @@
   </div>
 </template>
 <script>
-import { db } from "@/firebase";
+import { db, firebase } from "@/firebase";
 import Job from "@/components/Job.vue";
+import store from "@/store";
 export default {
   name: "poslovi",
   data() {
@@ -16,31 +17,24 @@ export default {
       kategorija: "",
       nazivOglasa: "",
       oglasi: [],
+      store,
     };
   },
   methods: {
     async getJobs() {
+      this.oglasi = [];
+      const user = firebase.auth().currentUser;
       const query = await db.collection("oglasi").get();
-      query.forEach((doc) => {});
-    },
-  },
-  methods: {
-    async getJobs() {
-      const query = await db.collection("oglasi").get();
-
       query.forEach((doc) => {
-        this.oglasi.push({
-          opisPosla: doc.data().jobDescription,
-          nazivPosla: doc.data().jobName,
-          kategorija: doc.data().category,
-          endTime: doc.data().endTime,
-          important: doc.data().important,
-          telefon: doc.data().numberOfSubmitter,
-          startTime: doc.data().startTime,
-          price: doc.data().price,
-          submittedBy: doc.data().submittedBy,
-          id: doc.id,
-        });
+        const document = doc.data();
+        document.id = doc.id;
+        console.log(document.userPostedJob);
+        if (
+          !(document?.userAccepted === user.displayName) &&
+          !document?.endTime
+        ) {
+          this.oglasi.push(document);
+        }
       });
     },
   },

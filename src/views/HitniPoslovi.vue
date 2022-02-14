@@ -89,18 +89,22 @@ export default {
       this.oglasi = [];
       query.forEach((doc) => {
         if (doc.data().important) {
-          this.oglasi.push({
-            opisPosla: doc.data().jobDescription,
-            nazivPosla: doc.data().jobName,
-            kategorija: doc.data().category,
-            endTime: doc.data().endTime,
-            important: doc.data().important,
-            telefon: doc.data().numberOfSubmitter,
-            startTime: doc.data().startTime,
-            price: doc.data().price,
-            submittedBy: doc.data().submittedBy,
-            id: doc.id,
-          });
+          // this.oglasi.push({
+          //   opisPosla: doc.data().jobDescription,
+          //   nazivPosla: doc.data().jobName,
+          //   kategorija: doc.data().category,
+          //   endTime: doc.data().endTime,
+          //   important: doc.data().important,
+          //   telefon: doc.data().numOfUserPosted,
+          //   startTime: doc.data().startTime,
+          //   price: doc.data().price,
+          //   submittedBy: doc.data().userPostedJob,
+          //   id: doc.id,
+          //   location: doc.data().location,
+          //   userAccepted: doc.data().userAccepted,
+          //   numOfUserAccepted: doc.data().numOfUserAccepted,
+          // });
+          this.oglasi.push({ doc: doc.data(), id: doc.id });
         }
       });
     },

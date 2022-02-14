@@ -40,6 +40,7 @@ const routes = [
     component: () => import("../views/Jobs.vue"),
     meta: {
       needsUser: true,
+      allowSearch: false,
     },
   },
   {
@@ -58,14 +59,18 @@ const router = new VueRouter({
   routes,
 });
 
+console.log();
+
 router.beforeEach((to, from, next) => {
   //svaki puta prije nego što se ruta promjeni
-  const noUser = store.currentUser === {};
+  const noUser = store.currentUser.email === null;
 
   if (noUser && to.meta.needsUser) {
     alert("Za pristup ovoj stranici se morate prijavit");
     next("login");
-  } else next();
+  } else {
+    next();
+  }
 });
 
 export default router;

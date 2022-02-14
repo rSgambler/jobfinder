@@ -32,14 +32,14 @@
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto" right>
-            <b-nav-item>
+            <b-nav-item v-if="currentRoute.name === 'poslovi'">
               <input
                 class="form-control mr-sm-2"
                 type="search"
                 placeholder="Pretraži Poslove"
               />
             </b-nav-item>
-            <b-nav-item>
+            <b-nav-item v-if="currentRoute.name === 'poslovi'">
               <button class="btn btn-warning" type="submit">
                 Pretraži
               </button>
@@ -162,15 +162,17 @@ import store from "@/store";
 import router from "@/router";
 
 const currentRoute = router.currentRoute; //current Route ima u sebi komponente iz index.js na kojoj se rutu nalzimo (meta podaci)
+console.log(currentRoute);
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     if (!currentRoute.meta.needsUser) {
       store.currentUser.email = user.email;
+      console.log(store.currentUser);
       router.push({ name: "home" }).catch(() => {});
     }
   } else {
-    store.currentUser = {};
+    store.currentUser.email = null;
     if (currentRoute.meta.needsUser) {
       router.push({ name: "login" }).catch(() => {});
     }
@@ -182,6 +184,7 @@ export default {
   data() {
     return {
       store,
+      currentRoute: "",
     };
   },
   methods: {
@@ -191,12 +194,18 @@ export default {
         .signOut()
         .then(() => {
           this.$router.push({ name: "login" }).catch(() => {});
-          store.currentUser = {};
+          this.store.currentUser.email = null;
         });
+    },
+    checkRoute(route) {
+      this.currentRoute = route;
     },
   },
   components: {
     Footer,
+  },
+  updated() {
+    this.checkRoute(this.$route);
   },
 };
 </script>

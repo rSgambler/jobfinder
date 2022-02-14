@@ -13,19 +13,23 @@
           <span>Lokacija: {{ oglas.location }}</span>
         </div>
         <div class="cost mt-3 text-dark">
-          <span>Poslodavac: {{ oglas.userPostedJob }}</span>
+          <span>Poslodavac:{{ oglas.userPostedJob }}</span>
         </div>
         <div class="cost mt-3 text-dark">
           <span>Broj Poslodavca: {{ oglas.numOfUserPosted }}</span>
         </div>
-      </div>
-      <div class="product-1 p-3 text-center text-white mt-3 cursor">
-        <input
-          class="btn"
-          type="button"
-          value="Preuzmi posao"
-          @click="acceptJob"
-        />
+        <div class="cost mt-3 text-dark">
+          <input
+            class="btn"
+            type="button"
+            value="Završi posao"
+            @click="endJob"
+            v-if="!oglas.endTime || !oglas.userPostedJob === username"
+          />
+        </div>
+        <div class="cost mt-3 text-dark" v-if="oglas.endTime">
+          <span>Posao Završen</span>
+        </div>
       </div>
     </div>
   </div>
@@ -98,24 +102,25 @@
 </style>
 <script>
 import { db, firebase } from "@/firebase";
-
 const user = firebase.auth().currentUser;
+console.log(user.displayName);
 export default {
   props: ["oglas"],
-  name: "Job",
+  name: "JobAccepted",
   data() {
     return {
       username: user.displayName,
     };
   },
   methods: {
-    async acceptJob() {
+    async endJob() {
       try {
         const jobRef = await db.collection("oglasi").doc(`${this.oglas.id}`);
+        const endDate = Date.now();
         await jobRef.update({
-          userAccepted: this.username,
+          endTime: endDate,
         });
-        alert("Posao uspješno prihvaćen");
+        alert("Posao uspješno završen");
       } catch (e) {
         alert(e.message);
       }
