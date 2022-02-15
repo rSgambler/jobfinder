@@ -71,7 +71,7 @@
 </style>
 
 <script>
-import { db } from "@/firebase";
+import { db, firebase } from "@/firebase";
 import Job from "@/components/Job.vue";
 export default {
   name: "hitniPoslovi",
@@ -85,26 +85,14 @@ export default {
   },
   methods: {
     async getJobs() {
-      const query = await db.collection("oglasi").get();
       this.oglasi = [];
+
+      const query = await db.collection("oglasi").get();
       query.forEach((doc) => {
-        if (doc.data().important) {
-          // this.oglasi.push({
-          //   opisPosla: doc.data().jobDescription,
-          //   nazivPosla: doc.data().jobName,
-          //   kategorija: doc.data().category,
-          //   endTime: doc.data().endTime,
-          //   important: doc.data().important,
-          //   telefon: doc.data().numOfUserPosted,
-          //   startTime: doc.data().startTime,
-          //   price: doc.data().price,
-          //   submittedBy: doc.data().userPostedJob,
-          //   id: doc.id,
-          //   location: doc.data().location,
-          //   userAccepted: doc.data().userAccepted,
-          //   numOfUserAccepted: doc.data().numOfUserAccepted,
-          // });
-          this.oglasi.push({ doc: doc.data(), id: doc.id });
+        const document = doc.data();
+        if (document.important) {
+          document.id = doc.id;
+          this.oglasi.push(document);
         }
       });
     },

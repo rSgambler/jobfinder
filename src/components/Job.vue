@@ -1,10 +1,12 @@
 <template>
   <div class="col-md-4">
     <div class="card mt-3">
-      <div class="product-1 align-items-center p-2 text-center">
-        <h5 class="title">{{ oglas.nazivPosla }}</h5>
-        <div class="mt-3 info">
-          <span class="text1 d-block">{{ oglas.opisPosla }}</span>
+      <div class="product-1 align-items-start p-2 text-left">
+        <h5 class="title">Naziv posla: {{ oglas.jobName }}</h5>
+        <div class="cost mt-3 info">
+          <span class="text1 d-block"
+            >Opis posla: {{ oglas.jobDescription }}</span
+          >
         </div>
         <div class="cost mt-3 text-dark">
           <span>Cijena posla: {{ oglas.price }} Kn</span>
@@ -19,12 +21,13 @@
           <span>Broj Poslodavca: {{ oglas.numOfUserPosted }}</span>
         </div>
       </div>
-      <div class="product-1 p-3 text-center text-white mt-3 cursor">
+      <div class="product-1 p-3 text-center text-white mt-3">
         <input
           class="btn"
           type="button"
           value="Preuzmi posao"
           @click="acceptJob"
+          v-if="oglas.userPostedJob !== username"
         />
       </div>
     </div>
@@ -33,6 +36,8 @@
 <style scoped>
 .product-1 {
   margin-top: 10px;
+
+  text-align: left !important;
 }
 .title {
   color: white;
@@ -81,7 +86,7 @@
   color: black;
   width: auto;
   border: 0;
-  color:#E8E7E7;
+  color: #e8e7e7;
   border: 2px solid #ffc312;
   background: none;
   display: block;
@@ -92,31 +97,41 @@
   transition: 0.25s;
   cursor: pointer;
 }
-
-.cursor {
-  cursor: pointer;
-}
 </style>
 <script>
 import { db, firebase } from "@/firebase";
+import router from "@/router";
 
 const user = firebase.auth().currentUser;
+let displayName = "";
+if (!user) {
+  displayName = "";
+} else {
+  displayName = user.displayName;
+}
+console.log(displayName);
+
 export default {
   props: ["oglas"],
   name: "Job",
   data() {
     return {
-      username: user.displayName,
+      username: displayName,
     };
   },
   methods: {
     async acceptJob() {
       try {
-        const jobRef = await db.collection("oglasi").doc(`${this.oglas.id}`);
-        await jobRef.update({
-          userAccepted: this.username,
-        });
-        alert("Posao uspješno prihvaćen");
+        if (!this.user) {
+          alert("Za pristup ovoj stranici se morate prijavit");
+          router.push({ name: "login" }).catch(() => {});
+        } else {
+          const jobRef = await db.collection("oglasi").doc(`${this.oglas.id}`);
+          await jobRef.update({
+            userAccepted: this.username,
+          });
+          alert("Posao uspješno prihvaćen");
+        }
       } catch (e) {
         alert(e.message);
       }

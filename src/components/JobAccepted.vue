@@ -24,19 +24,34 @@
             type="button"
             value="Završi posao"
             @click="endJob"
-            v-if="!oglas.endTime || !oglas.userPostedJob === username"
+            v-if="!oglas.endTime && oglas.userPostedJob !== username"
           />
         </div>
-        <div class="cost mt-3 text-dark" v-if="oglas.endTime">
-          <span>Posao Završen</span>
+        <div class="mt-3 finished" v-if="oglas.endTime">
+          <span>ZAVRŠEN</span>
+        </div>
+        <div class="mt-3 active" v-if="!oglas.endTime">
+          <span>U TIJEKU</span>
         </div>
       </div>
     </div>
   </div>
 </template>
 <style scoped>
+.finished {
+  color: green;
+  font-weight: bold;
+}
+
+.active {
+  color: yellow;
+  font-weight: bold;
+}
+
 .product-1 {
   margin-top: 10px;
+  text-align: left !important;
+  margin-left: 10%;
 }
 .title {
   color: white;
@@ -76,13 +91,12 @@
 }
 
 .cost span {
-  color: #E8E7E7;
+  color: #e8e7e7;
   font-weight: bold;
- 
 }
 
 .btn {
-  color: #E8E7E7;
+  color: #e8e7e7;
   width: auto;
   border: 2px solid #ffc312;
   background: none;
