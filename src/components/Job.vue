@@ -1,12 +1,11 @@
 <template>
   <div class="col-md-4">
     <div class="card mt-3">
-      <div class="product-1 align-items-start p-2 text-left">
+      <div class="product-1">
         <h5 class="title">Naziv posla: {{ oglas.jobName }}</h5>
         <div class="cost mt-3 info">
           <span class="text1 d-block"
-            >Opis posla: {{ oglas.jobDescription }}</span
-          >
+            >Opis posla: {{ oglas.jobDescription }}</span>
         </div>
         <div class="cost mt-3 text-dark">
           <span>Cijena posla: {{ oglas.price }} Kn</span>
@@ -44,9 +43,6 @@
   margin-top: 10px;
 }
 
-.product-1 {
-  margin-top: 10px;
-}
 
 .row {
   height: 60%;
@@ -122,7 +118,7 @@ export default {
   methods: {
     async acceptJob() {
       try {
-        if (!this.user) {
+        if (this.username==="") {
           alert("Za pristup ovoj stranici se morate prijavit");
           router.push({ name: "login" }).catch(() => {});
         } else {

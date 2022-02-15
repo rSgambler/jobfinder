@@ -38,6 +38,9 @@
   </div>
 </template>
 <style scoped>
+.col-md-4{
+  display: inline-block;
+}
 .finished {
   color: green;
   font-weight: bold;

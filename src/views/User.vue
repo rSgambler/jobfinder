@@ -76,6 +76,7 @@
 </template>
 
 <style scoped>
+
 .f-w-600 {
   color: black;
 }
