@@ -1,7 +1,7 @@
 <template>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="card mt-3">
-      <div class="product-1 align-items-center p-2 text-center">
+      <div class="product-1 p-2">
         <h5 class="title">{{ oglas.nazivPosla }}</h5>
         <div class="mt-3 info">
           <span class="text1 d-block">{{ oglas.opisPosla }}</span>
@@ -38,7 +38,7 @@
   </div>
 </template>
 <style scoped>
-.col-md-4{
+.col-md-6{
   display: inline-block;
 }
 .finished {
@@ -52,16 +52,12 @@
 }
 
 .product-1 {
-  margin-top: 10px;
+  margin-top: 20px;
   text-align: left !important;
   margin-left: 10%;
 }
 .title {
   color: white;
-  margin-top: 10px;
-}
-
-.product-1 {
   margin-top: 10px;
 }
 
@@ -89,10 +85,6 @@
   line-height: 17px;
 }
 
-.watch {
-  background: #286783;
-}
-
 .cost span {
   color: #e8e7e7;
   font-weight: bold;
@@ -103,7 +95,6 @@
   width: auto;
   border: 2px solid #ffc312;
   background: none;
-  display: block;
   margin: 15px auto;
   text-align: center;
   outline: none;
