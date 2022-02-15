@@ -34,18 +34,10 @@ export default {
       query.forEach((doc) => {
         const document = doc.data();
         document.id = doc.id;
-        console.log(document.userPostedJob);
-        if (!document.endTime) {
+        if (!document.endTime && document.userAccepted === "") {
           this.oglasi.push(document);
         }
       });
-    },
-  },
-  computed: {
-    async filterJobs() {
-      const query = await db
-        .collection("oglasi")
-        .where("opisPosla", "==", this.pojam);
     },
   },
   mounted() {
@@ -61,12 +53,9 @@ export default {
 .razmak {
   margin-top: 5%;
 }
-.container{
+.container {
   margin-left: 15%;
   margin-top: 50px;
   position: absolute;
 }
-
-
-
 </style>

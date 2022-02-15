@@ -2,10 +2,16 @@
   <div class="col-md-4">
     <div class="card mt-3">
       <div class="product-1">
-        <h5 class="title">Naziv posla: {{ oglas.jobName }}</h5>
+        <h5 class="title" v-if="!oglas.important">
+          Naziv posla: {{ oglas.jobName }}
+        </h5>
+        <h5 class="title important" v-if="oglas.important">
+          Naziv posla: {{ oglas.jobName }} (HITAN POSAO)
+        </h5>
         <div class="cost mt-3 info">
           <span class="text1 d-block"
-            >Opis posla: {{ oglas.jobDescription }}</span>
+            >Opis posla: {{ oglas.jobDescription }}</span
+          >
         </div>
         <div class="cost mt-3 text-dark">
           <span>Cijena posla: {{ oglas.price }} Kn</span>
@@ -73,7 +79,7 @@
 
 .cost span {
   color: #e8e7e7;
-  
+
   font-size: auto;
 }
 
@@ -91,6 +97,10 @@
   border-radius: 24px;
   transition: 0.25s;
   cursor: pointer;
+}
+
+.important {
+  color: red;
 }
 </style>
 <script>
@@ -117,7 +127,7 @@ export default {
   methods: {
     async acceptJob() {
       try {
-        if (this.username==="") {
+        if (this.username === "") {
           alert("Za pristup ovoj stranici se morate prijavit");
           router.push({ name: "login" }).catch(() => {});
         } else {

@@ -25,7 +25,6 @@
               />
               <a class="forgot text-muted" href="#">Zaboravili ste lozinku?</a>
               <input class="btn" type="button" @click="login" value="Login" />
-              
             </form>
           </div>
         </div>
@@ -69,10 +68,6 @@ export default {
   font-family: "Times New Roman";
 }
 
-.google {
-  margin-right: 30px;
-  color: white;
-}
 body {
   margin: 0;
   padding: 0;

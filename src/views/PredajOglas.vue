@@ -7,9 +7,15 @@
             <div class="mb-3 col-8">
               <label for="kategorija" class="form-label">Kategorija</label>
               <select class="form-select" id="kategorija" v-model="kategorija">
-                <option selected value="kucniLjubimci" class="dropdown">Kućni ljubimci </option>
-                <option value="posloviSOrudem" class="dropdown">Poslovi s oruđem</option>
-                <option value="kosnjaTrave" class="dropdown">Košnja Trave</option>
+                <option selected value="kucniLjubimci" class="dropdown"
+                  >Kućni ljubimci
+                </option>
+                <option value="posloviSOrudem" class="dropdown"
+                  >Poslovi s oruđem</option
+                >
+                <option value="kosnjaTrave" class="dropdown"
+                  >Košnja Trave</option
+                >
                 <option value="farbanje" class="dropdown">Farbanje</option>
               </select>
             </div>
@@ -24,8 +30,7 @@
               />
             </div>
             <div class="mb-3 col-12">
-              <label for="opisPosla" class="form-label"
-              >Opis Posla</label>
+              <label for="opisPosla" class="form-label">Opis Posla</label>
               <input
                 type="text"
                 class="form-control opis_posla"
@@ -36,7 +41,8 @@
             </div>
             <div class="mb-3 col-6">
               <label for="cijenaPosla" class="form-label"
-              >Cijena posla (kn)</label>
+                >Cijena posla (kn)</label
+              >
               <input
                 type="number"
                 class="form-control"
@@ -80,14 +86,13 @@
       </div>
     </div>
   </body>
-
 </template>
 <style scoped>
-.dropdown{
+.dropdown {
   background: black;
-  color: #E8E7E7;
+  color: #e8e7e7;
 }
-.btn{ 
+.btn {
   border: 0;
   background: none;
   border: 2px solid #2ecc71;
@@ -95,31 +100,31 @@
   text-align: center;
   padding: 14px 40px;
   outline: none;
-  color: #E8E7E7;
+  color: #e8e7e7;
   border-radius: 18px;
   transition: 0.25s;
   cursor: pointer;
 }
-.form-check-label{
-  color:#E8E7E7;
+.form-check-label {
+  color: #e8e7e7;
 }
-.form-select{
+.form-select {
   border: 0;
-  color: #E8E7E7;
+  color: #e8e7e7;
   background: none;
   text-align: center;
   border: 2px solid #3498db;
   outline: none;
-  
+
   border-radius: 24px;
 }
-.form-control{
+.form-control {
   border: 0;
   background: none;
   text-align: center;
   border: 2px solid #3498db;
   outline: none;
-  color: #E8E7E7;
+  color: #e8e7e7;
   border-radius: 24px;
 }
 .forma_za_predaj_oglas {
@@ -129,8 +134,8 @@
   margin-left: 200px;
   background: rgba(0, 0, 0, 0.85);
 }
-.form-label{
-  color: #E8E7E7;
+.form-label {
+  color: #e8e7e7;
   float: left;
 }
 .opis_posla {

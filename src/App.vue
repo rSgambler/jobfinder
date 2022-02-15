@@ -32,18 +32,6 @@
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto" right>
-            <b-nav-item v-if="currentRoute.name === 'poslovi'">
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Pretraži Poslove"
-              />
-            </b-nav-item>
-            <b-nav-item v-if="currentRoute.name === 'poslovi'">
-              <button class="btn btn-warning" type="submit">
-                Pretraži
-              </button>
-            </b-nav-item>
             <b-nav-item v-if="store.currentUser.email" to="/predajOglas">
               <button class="btn btn-warning" type="button">
                 Predaj Oglas
@@ -53,7 +41,7 @@
         </b-collapse>
       </b-navbar>
     </div>
-    
+
     <router-view />
     <Footer> </Footer>
   </div>
@@ -163,13 +151,11 @@ import store from "@/store";
 import router from "@/router";
 
 const currentRoute = router.currentRoute; //current Route ima u sebi komponente iz index.js na kojoj se rutu nalzimo (meta podaci)
-console.log(currentRoute);
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    store.currentUser.email = user.email;
     if (!currentRoute.meta.needsUser) {
-      store.currentUser.email = user.email;
-      console.log(store.currentUser);
       router.push({ name: "home" }).catch(() => {});
     }
   } else {

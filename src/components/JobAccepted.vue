@@ -2,9 +2,9 @@
   <div class="col-md-6">
     <div class="card mt-3">
       <div class="product-1 p-2">
-        <h5 class="title">{{ oglas.nazivPosla }}</h5>
-        <div class="mt-3 info">
-          <span class="text1 d-block">{{ oglas.opisPosla }}</span>
+        <h5 class="title">Naziv posla: {{ oglas.jobName }}</h5>
+        <div class=" cost mt-3 text-dark">
+          <span>Opis posla: {{ oglas.jobDescription }}</span>
         </div>
         <div class="cost mt-3 text-dark">
           <span>Cijena posla: {{ oglas.price }} Kn</span>
@@ -38,7 +38,7 @@
   </div>
 </template>
 <style scoped>
-.col-md-6{
+.col-md-6 {
   display: inline-block;
 }
 .finished {
@@ -110,7 +110,6 @@
 <script>
 import { db, firebase } from "@/firebase";
 const user = firebase.auth().currentUser;
-console.log(user.displayName);
 export default {
   props: ["oglas"],
   name: "JobAccepted",

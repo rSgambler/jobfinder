@@ -76,7 +76,6 @@
 </template>
 
 <style scoped>
-
 .f-w-600 {
   color: black;
 }
@@ -105,7 +104,7 @@
 }
 
 .card {
-  color: #E8E7E7;
+  color: #e8e7e7;
   border-radius: 15px;
   -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
   box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);

@@ -48,9 +48,6 @@
                 @click="register"
                 value="Registriraj se"
               />
-              <div class="col-md-12">
-                <ul class="social-network social-circle"></ul>
-              </div>
             </form>
           </div>
         </div>
@@ -103,10 +100,6 @@ export default {
   font-family: "Times New Roman";
 }
 
-.google {
-  margin-right: 30px;
-  color: white;
-}
 body {
   margin: 0;
   padding: 0;
