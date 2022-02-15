@@ -1,24 +1,6 @@
 <template>
   <div class="container">
     <div class="row">
-      <b-navbar-nav class="razmak" right>
-        <b-nav-item>
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Pretraži Poslove"
-            v-model="pojam"
-          />
-        </b-nav-item>
-        <b-nav-item class="razmak">
-          <input
-            type="button "
-            class="btn btn-warning"
-            @click="filterJobs"
-            value="Pretraži"
-          />
-        </b-nav-item>
-      </b-navbar-nav>
       <Job
         class="razmak"
         v-for="oglas in oglasi"
@@ -78,7 +60,13 @@ export default {
 <style scoped>
 .razmak {
   margin-top: 5%;
-  width: 50%;
-  display: inline-block;
 }
+.container{
+  margin-left: 15%;
+  margin-top: 50px;
+  position: absolute;
+}
+
+
+
 </style>

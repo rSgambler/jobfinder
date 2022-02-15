@@ -35,15 +35,14 @@
 <style scoped>
 .product-1 {
   margin-top: 10px;
-
+  margin-left: 20px;
   text-align: left !important;
 }
 .title {
   color: white;
   margin-top: 10px;
+  text-decoration: underline;
 }
-
-
 .row {
   height: 60%;
   width: 60%;
@@ -61,7 +60,7 @@
 
 .text1 {
   font-size: 15px;
-  color: #cbcbcb;
+  color: #e8e7e7;
 }
 
 .info {
@@ -73,9 +72,9 @@
 }
 
 .cost span {
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
+  color: #e8e7e7;
+  
+  font-size: auto;
 }
 
 .btn {
