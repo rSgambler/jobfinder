@@ -90,7 +90,7 @@ export default {
       const query = await db.collection("oglasi").get();
       query.forEach((doc) => {
         const document = doc.data();
-        if (document.important) {
+        if (document.important && !document.endTime) {
           document.id = doc.id;
           this.oglasi.push(document);
         }
